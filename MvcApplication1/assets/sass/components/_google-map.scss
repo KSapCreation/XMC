@@ -1,0 +1,152 @@
+
+/* ==========================================================================
+    21. GOOGLE MAP
+    ========================================================================== */
+
+.gmap {
+    padding: 0px;
+    height: 400px;
+}
+
+.gmap div {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.map {
+    position: relative;
+}
+
+#map {
+    display: block;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+#map.large {
+    height: 400px;
+}
+
+#map img {
+    max-width: none !important;
+    height: auto;
+}
+
+.gmap1 {
+    height: 480px;
+}
+
+.gmap1 #map {
+    height: 480px;
+    margin: 0 auto;
+}
+
+.gmap1 #map.large {
+    height: 480px;
+}
+
+.cform .footer-contact {
+    margin-left: -10px;
+    margin-top: 30px;
+    display: table;
+}
+
+.cform .footer-contact p span {
+    color: #1674D1;
+}
+
+.c-form-social h5 {
+    displaY: inline-block;
+}
+
+#menu-social-medium {
+    display: inline-block;
+    margin: 0px;
+    padding-left: 5px;
+    position: relative;
+    top: 8px;
+}
+
+#menu-social-medium li {
+    float: left;
+    margin: 0 28px 0 0;
+}
+
+#menu-social-medium li a {
+    font-size: 20px;
+    color: #111;
+}
+
+#menu-social-medium li a:hover {
+    color: #1674D1;
+}
+
+.menu-social-small {
+    display: inline-block;
+    margin: 0 0 -6px;
+    padding-left: 0px;
+    position: relative;
+    top: 0px;
+}
+
+.menu-social-small li {
+    float: left;
+    margin: 0 28px 0 0;
+}
+
+.menu-social-small li a {
+    font-size: 16px;
+    color: #fff;
+}
+
+.menu-social-small li a:hover {
+    color: #1674D1;
+}
+
+#menu-social-big {
+    display: inline-block;
+    margin: 0 0 -6px;
+    padding-left: 0px;
+    position: relative;
+    top: 0px;
+}
+
+#menu-social-big li {
+    float: left;
+    margin: 0 0 0 20px;
+}
+
+#menu-social-big li a {
+    font-size: 20px;
+    color: #fff;
+}
+
+#menu-social-big li a:hover {
+    color: #1674D1;
+}
+
+.bg-white #menu-social-big {
+    margin: 30px 0px -6px;
+}
+
+.bg-white #menu-social-big li {
+    float: left;
+    margin: 0 0 0 24px;
+}
+
+.bg-white #menu-social-big li a {
+    font-size: 15px;
+    color: #111;
+}
+
+.bg-white #menu-social-big li a:hover {
+    color: #1674D1;
+}
+
+.cform input,
+.cform textarea {
+    color: #999;
+}
+

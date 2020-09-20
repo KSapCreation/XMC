@@ -1,0 +1,131 @@
+
+/* ==========================================================================
+    7. BUTTONS
+    ========================================================================== */
+
+.bttn {
+    border: 2px solid #1674D1;
+    color: #1674D1;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 13px 35px;
+    margin: 0px 6px 20px 0px;
+    border-radius: 0px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.bttn:hover {
+    color: #fff;
+    border-color: #1674D1;
+    background-color: #1674D1;
+}
+
+.bttn.medium {
+    padding: 8px 25px;
+}
+
+.bttn.skin-fill-blue {
+    color: #FFF;
+    border-color: #1674D1;
+    background: #1674D1 none repeat scroll 0% 0%;
+}
+
+.bttn.skin-fill-black {
+    border-color: #111;
+    background: #111 none repeat scroll 0% 0%;
+}
+
+.bttn.skin-fill-black,
+.bttn.skin-fill-black span {
+    color: #FFF;
+}
+
+.bttn.skin-white {
+    color: #fff!important;
+    border-color: #fff;
+}
+
+.bttn.skin-white:hover {
+    color: #1674D1!important;
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.bttn.has-icon {
+    position: relative;
+    padding-right: 80px;
+}
+
+.bttn.has-icon i {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 50px;
+    background-color: #1674D1;
+    color: #FFF;
+    font-size: 20px;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+}
+
+.bttn.skin-fill-blue.has-icon i {
+    color: #1674D1;
+    background-color: #FFF;
+}
+
+.bttn.skin-fill-black.has-icon i {
+    background-color: #FFF;
+    color: #111;
+}
+
+.bttn.skin-white {
+    color: #fff!important;
+    border-color: #fff;
+}
+
+.bttn.skin-white:hover {
+    color: #1674D1!important;
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.bttn.skin-green {
+    color: #2DB200!important;
+    border-color: #2DB200;
+}
+
+.bttn.skin-green:hover {
+    color: #fff!important;
+    border-color: #2DB200;
+    background-color: #2DB200;
+}
+
+.bttn.skin-fill-white {
+    color: #1674D1;
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.bttn.skin-fill-white:hover {
+    color: #1674D1;
+    border-color: #f5f5f5;
+    background-color: #f5f5f5;
+}
+
+.bttn.skin-fill-blue:hover {
+    color: #fff;
+    border-color: #458bd1;
+    background-color: #458bd1;
+}
+
+.bttn.skin-fill-black:hover {
+    color: #fff;
+    border-color: #333;
+    background-color: #333;
+}
+

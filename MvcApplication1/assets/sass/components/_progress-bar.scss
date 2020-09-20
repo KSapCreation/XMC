@@ -1,0 +1,179 @@
+
+/* ==========================================================================
+    9. PROGRESS BAR / SKILLS
+    ========================================================================== */
+
+.progress-box {
+    padding: 50px 0 80px;
+}
+
+.progress-item {
+    display: table;
+    position: relative;
+    width: 100%;
+    margin-bottom: 38px;
+}
+
+.progress_bar .progress-item:last-child {
+    margin-bottom: 0px;
+}
+
+.progress-label {
+    color: #111111;
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    display: inline-block;
+}
+
+.progress-ico {
+    color: #1674D1;
+    display: table-cell;
+    width: 50px;
+    vertical-align: bottom;
+    font-size: 25px;
+    color: #1674D1;
+}
+
+.progress_bar_single {
+    background: #f7f7f7;
+    position: relative;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.progress-item .progress-value-bar {
+    background-color: #1674D1;
+    display: table;
+    height: 5px;
+    position: relative;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.progress-item .progress-value-bar .label_units {
+    position: absolute;
+    right: -20px;
+    top: -50px;
+    background-color: #111;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 1em;
+    padding: 6px 7px;
+}
+
+.progress-item .progress-value-bar .label_units:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #111;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.progress-box-dark {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #111111;
+}
+
+.progress-box-dark .progress-ico,
+.progress-box-dark .progress-label {
+    color: #fff;
+}
+
+.progress-box-dark .progress-item .progress-value-bar .label_units {
+    background-color: #1674D1;
+}
+
+.progress-box-dark .progress-item .progress-value-bar .label_units:after {
+    border-top: 6px solid #1674D1;
+}
+
+.pc-item {
+    padding-top: 0;
+    margin-top: 50px;
+}
+
+.pc-item h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #111;
+    margin: 34px 0px 10px;
+}
+
+.progress-circle {
+    padding-top: 80px;
+    padding-bottom: 56px;
+}
+
+.pie_chart_value {
+    position: absolute;
+    left: 40%;
+    margin: 0;
+    display: table;
+    top: -49px;
+    background-color: #1674D1;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 1em;
+    padding: 6px 7px;
+    transform: translateY(-50%);
+}
+
+.pie_chart_value:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #1674D1;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.pie_chart_heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -28px;
+    margin-left: -25px;
+}
+
+.pie_chart_heading i {
+    font-size: 50px;
+    color: #111;
+}
+
+.pie_wrapper {
+    height: 216px;
+    width: 216px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.progress-circle-dark {
+    background-color: #111111 !important;
+}
+
+.progress-circle-dark .pc-item h4 {
+    color: #fff;
+}
+
+.progress-circle-dark .pie_chart_heading i {
+    color: #fff;
+}
+
+

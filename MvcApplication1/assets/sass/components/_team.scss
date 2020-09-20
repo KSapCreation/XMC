@@ -1,0 +1,232 @@
+
+/* ==========================================================================
+    20. TEAM
+    ========================================================================== */
+
+.about-team-header {
+    padding-top: 170px;
+    padding-bottom: 180px;
+    background-image: url(../images/other/about-section-01.jpg);
+}
+
+.about-team-header2 {
+    padding-top: 170px;
+    padding-bottom: 180px;
+    background-image: url(../images/other/about-section-03.jpg);
+}
+
+.about-team-header h1 {
+    margin: 0 0 40px;
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 0.2em;
+    color: #FFF;
+}
+
+.about-team-header p {
+    font-size: 15px;
+    color: #FFF;
+    line-height: 1.6em;
+    text-align: center;
+    text-transform: none;
+}
+
+.padding-100 {
+    padding: 100px 0 !important;
+}
+
+.content-head h1 {
+    margin: 15px 0 25px;
+    color: #1674D1;
+    letter-spacing: 0.05em;
+    font-size: 50px;
+}
+
+.content-head p {
+    font-size: 15px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.team-staff {
+    position: relative;
+}
+
+.team-staff img {
+    width: 100%;
+}
+
+.team-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.9);
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.team-staff:hover .team-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: .4s;
+}
+
+.team-overlay h4 {
+    color: #FFF;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 400;
+    margin: 0px 0px 35px;
+    transform: scale(1.1);
+    letter-spacing: 0.5em;
+    transition: .4s;
+    opacity: 0;
+}
+
+.team-overlay h4 span {
+    display: block;
+    font-size: 15px;
+    color: #1674D1;
+    transform: scale(0.9);
+    letter-spacing: 0.04em;
+    margin-top: 14px;
+    position: relative;
+    top: 15px;
+    opacity: 0;
+    transition: .4s;
+}
+
+.team-overlay p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    position: relative;
+    top: -25px;
+    opacity: 0;
+    transition: .4s;
+    margin-bottom: 49px;
+}
+
+.team-overlay:hover h4 {
+    color: #FFF;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 400;
+    margin: 0px 0px 35px;
+    transition: .4s;
+    transform: scale(1);
+    opacity: 1;
+    letter-spacing: 0.3em;
+}
+
+.team-overlay:hover h4 span {
+    display: block;
+    font-size: 15px;
+    color: #1674D1;
+    transform: scale(1);
+    letter-spacing: 0.04em;
+    margin-top: 14px;
+    position: relative;
+    top: 0px;
+    opacity: 1;
+    transition: .4s;
+}
+
+.team-overlay:hover p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    margin-bottom: 49px;
+    position: relative;
+    top: -0px;
+    opacity: 1;
+    transition: .4s;
+}
+
+.team-social a {
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFF;
+    margin: 0px 10px 50px;
+}
+
+.team-overlay-inner {
+    position: absolute;
+    bottom: 46px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 0px 40px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.padding-bottom-50 {
+    padding-bottom: 50px !important;
+}
+
+.about-me-header {
+    padding-top: 230px;
+    padding-bottom: 260px;
+    background-image: url(../images/other/about-section-04.jpg);
+}
+
+.about-me-header h1 {
+    letter-spacing: 0.2em;
+    line-height: 1.2em;
+    font-size: 50px;
+    color: #1674D1;
+    margin: 0 0 33px;
+}
+
+.about-me-header h1 span,
+.about-me-header h1 b {
+    color: #111;
+}
+
+.about-me-header p {
+    color: #111;
+    line-height: 1.9em;
+}
+
+.cform .content-head h1 {
+    margin: 0px 0px 20px;
+}
+
+.contact-info span {
+    font-size: 65px;
+}
+
+.contact-info h4 {
+    margin: 25px 0 15px;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+#menu-social {
+    display: table;
+    margin: 30px auto 45px;
+}
+
+#menu-social li {
+    float: left;
+    margin: 0 20px;
+}
+
+#menu-social li a {
+    font-size: 28px;
+    color: #111;
+}
+
+#menu-social li a:hover {
+    color: #1674D1;
+}
+

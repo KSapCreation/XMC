@@ -1,0 +1,97 @@
+
+/* ==========================================================================
+    24. PRICING TABLE
+    ========================================================================== */
+
+.item-price-table {
+    padding: 20px 20px 25px;
+    background-color: #F5F5F5;
+}
+
+.item-price-table h1 {
+    letter-spacing: 0.05em;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 50px;
+    margin: 0;
+}
+
+.item-price-table h5 {
+    color: #FFF;
+    margin-top: -40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #1372D1;
+}
+
+.item-price-table .sep1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.item-price-table p {
+    margin: 0px;
+    padding: 0 30px;
+}
+
+.item-price-table .bttn {
+    position: relative;
+    top: 18px;
+}
+
+.pricing-wrap .content-head {
+    margin-bottom: 150px;
+}
+
+.pricing-wrap .content-head h1 {
+    margin: 0 0 15px;
+}
+
+.pricing-wrap .content-head p {
+    font-size: 14px;
+}
+
+.item-price-recommended {
+    margin-top: -20px !important;
+}
+
+.item-price-recommended h5 {
+    margin-top: -50px !important;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+    margin-bottom: 30px;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    background-color: #2DB200 !important;
+}
+
+.item-price-recommended h5 i {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+    display: table;
+    text-align: center;
+    width: 100%;
+}
+
+.item-price-recommended h1 {
+    color: #2DB200;
+}
+
+.item-price-recommended .bttn {
+    color: #2DB200;
+    border-color: #2DB200;
+}
+
+.item-price-recommended .bttn:hover {
+    color: #fff;
+    background: #2DB200;
+    border-color: #2DB200;
+}
+
+.pricing-wrap-bg {
+    background: url(../images/other/section08.jpg);
+}

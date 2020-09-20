@@ -1,0 +1,60 @@
+
+/* ==========================================================================
+    17. ICON BOX
+    ========================================================================== */
+
+.icon-box1 i {
+    color: #1674d1;
+    font-size: 40px;
+    display: inline-block !important;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.icon-box1 h3 {
+    color: #111111;
+    display: inline-block !important;
+    vertical-align: middle;
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.icon-box1 p {
+    padding: 10px 0 20px;
+}
+
+.icon-box2 {
+    position: relative;
+    padding-left: 65px;
+}
+
+.icon-box2 i {
+    color: #1674d1;
+    font-size: 50px;
+    display: inline-block !important;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-variant: normal;
+    text-rendering: auto;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    margin-top: -7px;
+}
+
+.icon-box2 h3 {
+    color: #111111;
+    display: inline-block !important;
+    vertical-align: middle;
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.icon-box2 p {
+    padding: 10px 0 20px;
+}
+

@@ -1,0 +1,67 @@
+
+
+/* ==========================================================================
+    12. COUNTDOWN TIMER
+    ========================================================================== */
+
+#ctimer {
+    font-weight: 500;
+    font-size: 50px;
+    color: #1674d1;
+    text-align: center;
+}
+
+#ctimer span {
+    margin-left: 10px;
+    margin-right: 25px;
+    color: #111;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    font-weight: 400;
+    vertical-align: top;
+    position: relative;
+    top: 15px;
+}
+
+.countdown {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+#ctimer2 {
+    font-weight: 500;
+    font-size: 50px;
+    color: #1674d1;
+    text-align: center;
+    position: relative;
+    left: -15px;
+}
+
+.time {
+    display: inline-block;
+}
+
+#ctimer2 span {
+    color: #111;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    font-weight: 400;
+    vertical-align: top;
+    position: relative;
+    display: block;
+}
+
+#ctimer2 em {
+    font-style: normal;
+    margin: 0 50px;
+    position: relative;
+    top: -23px;
+}
+
+.no-margin,
+.no-margin-p p {
+    margin: 0;
+}
+

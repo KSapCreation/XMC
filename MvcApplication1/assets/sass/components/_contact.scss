@@ -1,0 +1,44 @@
+
+
+/* ==========================================================================
+    15. CONTACT FORM
+    ========================================================================== */
+
+.contact-form button {
+    background: transparent;
+    border: 2px solid #1674D1;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 11px 35px 11px 35px;
+    margin: 0px auto;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #1674D1;
+    display: table;
+}
+
+.contact-form button:hover {
+    background: #1674D1;
+    border: 2px solid #1674D1;
+    color: #fff;
+}
+
+.contact-form .col-md-6,
+.contact-form .col-md-12 {
+    padding: 0 5px;
+}
+
+.contact-form .row {
+    margin: 0 -5px;
+}
+
+.help-block {
+    margin-top: 0;
+    color: #EA5A57;
+    margin-bottom: 20px;
+}
+
+.top-space {
+    margin-top: 20px;
+}
+

@@ -1,0 +1,67 @@
+
+/* ==========================================================================
+    14. DROPCAPS
+    ========================================================================== */
+
+.dropcap-border span {
+    width: 60px;
+    height: 60px;
+    line-height: 56px;
+    text-align: center;
+    border: 2px solid #eeeeee;
+    color: #111;
+    float: left;
+    font-size: 34px;
+    margin-top: -19px;
+    margin-right: 15px;
+}
+
+.dropcap-blue span {
+    width: 60px;
+    height: 60px;
+    line-height: 56px;
+    text-align: center;
+    background: #1674d1;
+    border: 2px solid #1674d1;
+    color: #fff;
+    float: left;
+    font-size: 34px;
+    margin-top: -19px;
+    margin-right: 15px;
+}
+
+.dropcap-black span {
+    width: 60px;
+    height: 60px;
+    line-height: 56px;
+    text-align: center;
+    background: #111;
+    border: 2px solid #111;
+    color: #fff;
+    float: left;
+    font-size: 34px;
+    margin-top: -19px;
+    margin-right: 15px;
+}
+
+.dropcap-text span {
+    width: 60px;
+    height: 60px;
+    line-height: 56px;
+    color: #111;
+    float: left;
+    font-size: 60px;
+    margin-top: -16px;
+    margin-right: -8px;
+}
+
+.dropcap-text-blue span {
+    width: 60px;
+    height: 60px;
+    line-height: 56px;
+    color: #1674d1;
+    float: left;
+    font-size: 60px;
+    margin-top: -16px;
+    margin-right: -8px;
+}

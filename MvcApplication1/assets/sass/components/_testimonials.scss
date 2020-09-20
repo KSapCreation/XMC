@@ -1,0 +1,96 @@
+
+/* ==========================================================================
+    19. TESTIMONIALS
+    ========================================================================== */
+
+.client-testimonials {
+    padding: 90px 0;
+}
+
+.testimonial-text p {
+    margin: 0px;
+    padding: 0px 0px 20px;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.6em;
+    color: #444;
+    border: medium none;
+}
+
+.testimonial-text cite span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #999;
+    margin-top: 10px;
+    display: block;
+}
+
+.testimonial-text cite {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #111;
+    letter-spacing: 0.3em;
+    font-style: normal;
+}
+
+.img-sep {
+    padding: 15px 0;
+}
+
+.testimonials-carousel .slick-prev {
+    color: #1674D1;
+    font-size: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    position: absolute;
+    bottom: 2px;
+    margin: 0px auto;
+    left: -60px;
+    right: 0px;
+    width: 45px;
+}
+
+.testimonials-carousel .slick-next {
+    color: #1674D1;
+    font-size: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    position: absolute;
+    bottom: 2px;
+    margin: 0px auto;
+    left: 60px;
+    right: 0px;
+    width: 45px;
+}
+
+.testimonials-carousel .slick-prev:after {
+    content: "\e687";
+    font-size: 50px;
+    font-family: "Pe-icon-7-stroke";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.testimonials-carousel .slick-next:after {
+    content: "\e685";
+    font-size: 50px;
+    font-family: "Pe-icon-7-stroke";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.testimonials-carousel {
+    padding-bottom: 80px;
+}
+

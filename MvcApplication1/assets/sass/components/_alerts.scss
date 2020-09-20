@@ -1,0 +1,81 @@
+
+/* ==========================================================================
+    6. ALERTS
+    ========================================================================== */
+
+.alert-ico {
+    color: #DF6060;
+    font-size: 14px;
+    bottom: 0px;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 4em;
+    left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.alert {
+    background-color: #FFECEC;
+    border: medium none;
+    display: block;
+    overflow: hidden;
+    margin: 0px 0px 21.7391px;
+    padding: 1em 1em 1em 4em;
+    position: relative;
+    font-size: 1em;
+    border-radius: 0px;
+}
+
+.alert p {
+    color: #DF6060;
+}
+
+.alert .close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    color: #F00;
+    margin-right: 20px;
+    position: relative;
+    top: 50%;
+}
+
+.alert.alert-success {
+    background: #E0F2D9;
+}
+
+.alert.alert-success .close,
+.alert.alert-success .alert-ico,
+.alert.alert-success p {
+    color: #58A839;
+}
+
+.alert.alert-info {
+    background: #ECF1F9;
+}
+
+.alert.alert-info .close,
+.alert.alert-info .alert-ico,
+.alert.alert-info p {
+    color: #3D6EBF;
+}
+
+.alert.alert-warning {
+    background: #FDF9DF;
+}
+
+.alert.alert-warning .close,
+.alert.alert-warning .alert-ico,
+.alert.alert-warning p {
+    color: #EB9B0A;
+}
+

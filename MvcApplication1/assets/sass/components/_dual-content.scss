@@ -1,0 +1,208 @@
+
+
+/* ==========================================================================
+    23. DUAL CONTENT
+    ========================================================================== */
+
+.dual-content {
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.dual-img {
+    background-size: cover !important;
+    width: 50%;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.dual-info {
+    padding: 165px 135px !important;
+    background: #111 url(../images/other/service-list-01-021.jpg) repeat scroll 0% 0% !important;
+}
+
+.dual-info h4 {
+    color: #FFF;
+    margin: 0 0 15px !important;
+}
+
+.dual-info p {
+    color: #fff;
+}
+
+.dual-info ul {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.dual-info li {
+    line-height: 2.5em;
+    position: relative;
+    color: #fff;
+}
+
+.dual-info li:after {
+    content: "\e685";
+    color: #fff;
+    font-family: "Pe-icon-7-stroke";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: -30px;
+    margin-top: -10px;
+}
+
+.dual-content-right {
+    position: relative;
+}
+
+.dual-content-right .dual-img {
+    background-size: cover !important;
+    width: 50%;
+    float: left;
+    position: absolute;
+    top: 0px;
+    left: auto;
+    height: 100%;
+    right: 0;
+}
+
+.dual-content-blue .dual-info {
+    padding: 165px 135px !important;
+    background: #1674D1 url(../images/other/service-list-02-021.jpg) repeat scroll 0% 0% !important;
+}
+
+.text-content h4 {
+    margin: 0 0 20px !important;
+}
+
+.text-content p {
+    margin: 0;
+}
+
+.text-black {
+    background: #111;
+    padding: 0 100px;
+}
+
+.text-black h4 {
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFF;
+    font-weight: 400;
+    margin: 10px 0 0;
+    padding: 5px 0 20px;
+}
+
+.text-black p {
+    margin: 0;
+}
+
+.text-blue {
+    background: #1674D1;
+    padding: 0 100px;
+}
+
+.text-blue h4 {
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFF;
+    font-weight: 400;
+    margin: 10px 0 0;
+    padding: 5px 0 20px;
+}
+
+.text-blue p {
+    color: #fff;
+    margin: 0;
+}
+
+.v-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.col-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+}
+
+.col-middle {
+    vertical-align: middle;
+}
+
+.row-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.step-features h1 {
+    color: #1472d1;
+    line-height: 1.2em;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0.1em;
+    margin: 0 0 35px;
+    font-size: 50px;
+}
+
+.step-feature-box {
+    position: relative;
+    padding-top: 25px !important;
+    padding-left: 10px !important;
+}
+
+.step-feature-box h2 {
+    font-size: 80px;
+    color: #1573d1;
+    position: absolute;
+    top: 0px;
+    left: -15px;
+    opacity: 0.1;
+    letter-spacing: 0px;
+    padding: 0px !important;
+    margin: 0px !important;
+    line-height: 1em !important;
+}
+
+.step-feature-box table tbody tr td {
+    overflow: hidden;
+    position: relative;
+}
+
+.step-feature-box table tbody tr td:nth-child(2) {}
+
+.step-feature-box table tbody tr td:nth-child(2) hr {
+    background: #AAA none repeat scroll 0% 0%;
+    border: 0px none;
+    height: 1px;
+    text-align: left;
+    position: relative;
+    width: 165px;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+}
+
+.step-feature-box h4 {
+    font-size: 15px;
+}
+
+.step-feature-box table tbody tr td:first-child {
+    width: 200px;
+}
+
