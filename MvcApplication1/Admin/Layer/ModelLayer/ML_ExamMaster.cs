@@ -24,7 +24,8 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string FileType { get; set; }
         public byte[] FileData { get; set; }
         public string TearmsConditions { get; set; }
-        public string StudentName { get; set; }        
+        public string StudentName { get; set; }
+        public string DocType { get; set; }
 
 
 

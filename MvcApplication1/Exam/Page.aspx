@@ -141,6 +141,9 @@
                 </ContentTemplate>
             </asp:UpdatePanel>--%>
           
+     <% if (blExamDocType)
+         { %>
+
             <div class="row">
                
                 <div class="col-sm-3">
@@ -221,8 +224,50 @@
                 </div>
             </div>
 
+              <%    } %>
+              
+            
+
+       <% else
+                { %>
+
+          
             <div class="row">
-                <div class="col-sm-4">
+           
+                <div class="col-sm-12">
+                    <div class="CategoryPage">
+                        <asp:LinkButton ID="LinkButton5" runat="server" ForeColor="White">Individual</asp:LinkButton>
+                        <asp:Label ID="Label3" runat="server" Visible="false"></asp:Label>
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ColectionPage">
+                        <asp:Label ID="Label2" runat="server" Visible="false" ForeColor="White" CssClass="blink"></asp:Label>
+                        <asp:DataList ID="DlIndividual" runat="server" RepeatDirection="Vertical" RepeatLayout="Table" RepeatColumns="15" CellPadding="200">
+                            <ItemTemplate>
+                                <asp:Label ID="lblID" runat="server" Text='<%#Eval("QuestionID")%>' Visible="false"></asp:Label><span style="color: white;">-</span>
+                                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="ShowIndividualQuestion" Style="border-width: 1px; border-style: Solid; border-radius: 10px; font-weight: 600; border-color: white;">
+                                    <asp:Label ID="Label1" runat="server" Text='<%#Eval("num")%>' ForeColor="White"></asp:Label>
+                                </asp:LinkButton>
+
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+            <% } %>
+
+            <div class="row">
+
+                <div class="col-sm-4" id="multiplediv" runat="server">
                     <div class="portlet light">
                         <asp:DataList ID="DlAudioSection" runat="server" RepeatDirection="Horizontal" RepeatColumns="1">
                             <ItemTemplate>
@@ -249,7 +294,8 @@
                         </asp:Panel>
                     </div>
                 </div>
-                <div class="col-md-8">
+
+                <div class="col-md-8" id="DivQuestion_DocType" runat="server">
                     <div class="portlet light">
 
                         <asp:Label ID="lblAllID" runat="server" Visible="false"></asp:Label>
@@ -305,10 +351,7 @@
                 </div>
 
 
-
             </div>
-
-
 
             <div class="row" id="StartPageDiv" runat="server" visible="true" style="padding-bottom: 180px;">
                 <h1>Kindly select any one section to start Exam. FBNPC</h1>

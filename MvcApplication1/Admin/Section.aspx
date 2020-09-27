@@ -56,6 +56,14 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-md-3">                              
+                                                       <asp:RadioButton ID="rbtnMultiple" runat="server" CssClass="form-control" Text="Multiple" Checked="true" GroupName="gpselection" />
+                                                    </div>
+                                                    <div class="col-md-3">                           
+                                                        <asp:RadioButton ID="rbtnIndividual" runat="server" CssClass="form-control" Text="Individual" GroupName="gpselection" />                             
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-actions right">
                                             <asp:Button ID="btnCancel" runat="server" CssClass="btn default" Text="Cancel" OnClick="Cancel" />
@@ -88,7 +96,12 @@
                                     <ItemTemplate>
                                         <asp:Label ID="lblDoctype" runat="server" Text='<%# Eval("Description") %>' ></asp:Label>
                                     </ItemTemplate>
-                                </asp:TemplateField>                                                
+                                </asp:TemplateField>       
+                                <asp:TemplateField HeaderText="Doc Type">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblType" runat="server" Text='<%# Eval("DocType") %>' ></asp:Label>
+                                        </ItemTemplate>
+                                        </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Update By">
                                     <ItemTemplate>
                                         <asp:Label ID="lblModifyBy" runat="server" Text='<%# Eval("ModifyBy") %>' ></asp:Label>

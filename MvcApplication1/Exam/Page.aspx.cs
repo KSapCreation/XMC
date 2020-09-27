@@ -14,21 +14,33 @@ namespace MvcApplication1.Exam
 {
     public partial class Page : System.Web.UI.Page
     {
+        protected bool blExamDocType;
         ML_ExamTransaction objML_ExamTransaction = new ML_ExamTransaction();
         BL_ExamTransaction objBL_ExamTransaction = new BL_ExamTransaction();
-
+        string DocTypeValue = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
+            DocTypeValue = "Multiple";
+           
             if (Session["UserName"] == null)
             {
                 Response.Redirect("~/ExamDefault.aspx", true);
             }
             if (!IsPostBack)
             {
-                BindCollection();
-                BindVideoCollection();
-                BindReadingCollection();
-                BindExamEnd();
+                if (Session["ExamDocType"] == DocTypeValue)
+                {
+                    blExamDocType = true;
+                    BindCollection();
+                    BindVideoCollection();
+                    BindReadingCollection();
+                    BindExamEnd();
+                }
+                else
+                {
+                    BindIndividualQuestionCollection();
+                }
+                
                 SessionExpireStop.Text = Session["UserName"].ToString();
                 
                 //BindExamSheet();
@@ -38,6 +50,19 @@ namespace MvcApplication1.Exam
         protected void UpdateTimer_Tick(object sender, EventArgs e)
         {
             Session["Username"] = SessionExpireStop.Text;
+        }
+
+        private void BindIndividualQuestionCollection()
+        {
+            DataTable dt = new DataTable();
+            objML_ExamTransaction.ID = Session["ExamName"].ToString();            
+            dt = objBL_ExamTransaction.BL_BindIndividualCollection(objML_ExamTransaction);
+            if (dt.Rows.Count > 0)
+            {
+                DlIndividual.DataSource = dt;
+                DlIndividual.DataBind();     
+            }
+           
         }
         private void BindCollection()
         {
@@ -107,6 +132,7 @@ namespace MvcApplication1.Exam
             dt = objBL_ExamTransaction.BL_BindQuestionSheet(objML_ExamTransaction);
             if (dt.Rows.Count > 0)
             {
+      
                 ddlExamQuestion.DataSource = dt;
                 ddlExamQuestion.DataBind();
                 lblPaperID.Text = dt.Rows[0]["PaperID"].ToString();
@@ -260,8 +286,40 @@ namespace MvcApplication1.Exam
             }
         }
 
+        protected void ShowIndividualQuestion(object sender, EventArgs e)
+        {
+            ddlExamQuestion.DataSource = "";
+            DataListItem gvr = (DataListItem)(((Control)sender).NamingContainer);
+            {
+                Label lblID = (Label)gvr.FindControl("lblID");
+                LinkButton lnkCounted = (LinkButton)gvr.FindControl("LinkButton3");
+                DataTable dt = new DataTable();
+                objML_ExamTransaction.ID = lblID.Text != "" ? lblID.Text : null;
+                objML_ExamTransaction.ExamName = Session["ExamName"].ToString();
+                dt = objBL_ExamTransaction.BL_ShowIndividualQuestion(objML_ExamTransaction);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlExamQuestion.DataSource = dt;
+                    ddlExamQuestion.DataBind();
+                    SaveDiv.Visible = true;
+                    multiplediv.Visible = false;
+                    DivQuestion_DocType.Attributes.Add("Class", "col-sm-12");
+                    ddlExamQuestion.Height = 200;
+                    lblAllID.Text = dt.Rows[0]["QuestionID"].ToString();
+                    lblPaperID.Text = dt.Rows[0]["PaperID"].ToString();
+                    lnkCounted.BackColor = System.Drawing.Color.Gray;
+                    lnkCounted.ForeColor = System.Drawing.Color.Black;                   
+                    pnQuestion.Height = 300;                    
+                    ddlExamQuestion.Visible = true;
+                    ThankuSubmit.Visible = false;
+                    StartPageDiv.Visible = false;
+
+                }
+            }
+        }
+
         #region  Save Function
-        
+
         protected void SubmitExam(object sender, EventArgs e)
         {
             try

@@ -67,5 +67,13 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_ExamTransaction.DL_ShowReading(objML_ExamTransaction);
         }
+        public DataTable BL_BindIndividualCollection(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_BindIndividualCollection(objML_ExamTransaction);
+        }
+        public DataTable BL_ShowIndividualQuestion(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_ShowIndividualQuestion(objML_ExamTransaction);
+        }
     }
 }

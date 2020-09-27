@@ -1,15 +1,12 @@
-/*--------------------------------------------------
-    [TRANSITION]
-----------------------------------------------------*/
 /* Cubic Bezier Transition */
 /****
 Boby
 ****/
 body {
-  background-color: #fff;
+    /*background-color: #fff;*/
 }
 body.page-md {
-  background: white;
+  /*background: white;*/
 }
 
 /******

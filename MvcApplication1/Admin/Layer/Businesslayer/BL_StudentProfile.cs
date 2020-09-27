@@ -32,6 +32,11 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_StudentProfile.DL_BindStudentExamList(objML_StudentProfile);
         }
+
+        public DataTable BL_BindStudentExamListIndividual(ML_StudentProfile objML_StudentProfile)
+        {
+            return objDL_StudentProfile.DL_BindStudentExamListIndividual(objML_StudentProfile);
+        }
         public DataTable BL_BindStudentScoreBoard(ML_StudentProfile objML_StudentProfile)
         {
             return objDL_StudentProfile.DL_BindStudentScoreBoard(objML_StudentProfile);

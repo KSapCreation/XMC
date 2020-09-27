@@ -31,11 +31,11 @@ namespace MvcApplication1.Admin.Layer.Datalayer
         {
             SqlParameter[] par ={new SqlParameter("@SectionID",objML_ExamMaster.ID),
                                     new SqlParameter("@SectionName",objML_ExamMaster.SectionName),
-                                    new SqlParameter("@SectionDesc",objML_ExamMaster.Description),                                                                                            
+                                    new SqlParameter("@SectionDesc",objML_ExamMaster.Description),
                                     new SqlParameter("@CreatedBy",objML_ExamMaster.CreatedBy),
-                                      new SqlParameter("@ModifyBy",objML_ExamMaster.ModifyBy)                                 
-                                      
-                                    
+                                      new SqlParameter("@ModifyBy",objML_ExamMaster.ModifyBy),                      new SqlParameter("@DocType",objML_ExamMaster.DocType)
+
+
                                };
             return SqlHelper.ExecuteNonQuery(con, "FBNPC_Sections_Insert", par);
         }

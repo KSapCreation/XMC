@@ -122,7 +122,21 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                };
             return SqlHelper.ExecuteDataset(con, "FBNPC_Show_Reading_Sheet_Video", par).Tables[0];
         }
+        public DataTable DL_BindIndividualCollection(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_ExamTransaction.ID),
+                                 //new SqlParameter("@StudentName",objML_ExamTransaction.StudentName)
+                               };
+            return SqlHelper.ExecuteDataset(con, "FBNPC_Show_Individual_Sheet", par).Tables[0];
+        }
+        public DataTable DL_ShowIndividualQuestion(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_ExamTransaction.ID),
+                                    new SqlParameter("@ExamID",objML_ExamTransaction.ExamName)
 
+                               };
+            return SqlHelper.ExecuteDataset(con, "FBNPC_Show_Individual_Sheet_Question", par).Tables[0];
+        }
     }
 
 }

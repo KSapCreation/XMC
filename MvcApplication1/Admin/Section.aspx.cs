@@ -87,6 +87,16 @@ namespace MvcApplication1.Admin
                     objML_ExamMaster.Description = txtDesc.Text != "" ? txtDesc.Text : null;
                     objML_ExamMaster.CreatedBy = Session["UserName"].ToString();
                     objML_ExamMaster.ModifyBy = Session["UserName"].ToString();
+                    if (rbtnMultiple.Checked == true)
+                    {
+                        objML_ExamMaster.DocType = rbtnMultiple.Text != "" ? rbtnMultiple.Text : null;
+                       
+                    }
+                    else
+                    {
+                        objML_ExamMaster.DocType = rbtnIndividual.Text != "" ? rbtnIndividual.Text : null;
+                    }
+                    
                     int x = objBL_ExamMaster.BL_InsSection(objML_ExamMaster);
                     if (x == 1)
                     {
@@ -102,7 +112,15 @@ namespace MvcApplication1.Admin
                     objML_ExamMaster.Description = txtDesc.Text != "" ? txtDesc.Text : null;
                     objML_ExamMaster.CreatedBy = Session["UserName"].ToString();
                     objML_ExamMaster.ModifyBy = Session["UserName"].ToString();
+                    if (rbtnMultiple.Checked == true)
+                    {
+                        objML_ExamMaster.DocType = rbtnMultiple.Text != "" ? rbtnMultiple.Text : null;
 
+                    }
+                    else
+                    {
+                        objML_ExamMaster.DocType = rbtnIndividual.Text != "" ? rbtnIndividual.Text : null;
+                    }
                     int x = objBL_ExamMaster.BL_InsSection(objML_ExamMaster);
                     if (x == 1)
                     {
@@ -160,6 +178,17 @@ namespace MvcApplication1.Admin
                         txtDesc.Text = dt.Rows[0]["Description"].ToString();
                         txtSection.Text = dt.Rows[0]["SectionName"].ToString();
                         lblID.Text = dt.Rows[0]["SectionID"].ToString();
+                        string doctype = dt.Rows[0]["DocType"].ToString();
+                        if (doctype == "Multiple")
+                        {
+                            rbtnMultiple.Checked = true;
+                            rbtnIndividual.Checked = false;
+                        }
+                        else
+                        {
+                            rbtnIndividual.Checked = true;
+                            rbtnMultiple.Checked = false;
+                        }
                         btnSave.Text = "Update";
                     }
                 }

@@ -26,6 +26,7 @@ namespace MvcApplication1.Exam
             if (!IsPostBack)
             {
                 BindExamList();
+                BindExamListIndividual();
             }
         }
         private void BindExamList()
@@ -40,6 +41,32 @@ namespace MvcApplication1.Exam
                     dlExamList.DataSource = dt;
                     dlExamList.DataBind();
                 }
+                else
+                {
+                    lblMultiMsg.Text = "No Records found";
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "message", "alert('" + ex.Message.ToString() + "')", true);
+            }
+        }
+        private void BindExamListIndividual()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                objML_StudentProfile.ID = Session["Username"].ToString();
+                dt = objBL_StudentProfile.BL_BindStudentExamListIndividual(objML_StudentProfile);
+                if (dt.Rows.Count > 0)
+                {
+                    dlExamIndividual.DataSource = dt;
+                    dlExamIndividual.DataBind();
+                }
+                else
+                {
+                    lblIndividualMsg.Text = "No Records found";
+                }
             }
             catch (Exception ex)
             {
@@ -53,11 +80,13 @@ namespace MvcApplication1.Exam
                 DataListItem gvr = (DataListItem)(((Control)sender).NamingContainer);
                 {
                     Label lblID = (Label)gvr.FindControl("lblExamID");
+                    Label lblDocType = (Label)gvr.FindControl("lblIndividual");
                     DataTable dt = new DataTable();
                     objML_StudentProfile.ID = lblID.Text != "" ? lblID.Text : null;
                     if (lblID.Text != "")
                     {
                         Session["ExamName"] = lblID.Text != "" ? lblID.Text : null;
+                        Session["ExamDocType"] = lblDocType.Text != "" ? lblDocType.Text : null;
                         //Response.Redirect("FBNPCTearms.aspx", true);
                         Response.RedirectToRoute("FBNPCTearms", true);
                     }

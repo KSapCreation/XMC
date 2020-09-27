@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Admin {
-    
-    
-    public partial class Section {
-        
+namespace MvcApplication1.Admin
+{
+
+
+    public partial class Section
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// scriptManager1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager scriptManager1;
-        
+
         /// <summary>
         /// Userinfo control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Userinfo;
-        
+
         /// <summary>
         /// lblID control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblID;
-        
+
         /// <summary>
         /// txtSection control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSection;
-        
+
         /// <summary>
         /// txtDesc control.
         /// </summary>
@@ -65,7 +67,25 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
-        
+
+        /// <summary>
+        /// rbtnMultiple control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnMultiple;
+
+        /// <summary>
+        /// rbtnIndividual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnIndividual;
+
         /// <summary>
         /// btnCancel control.
         /// </summary>
@@ -74,7 +94,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
-        
+
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -83,7 +103,7 @@ namespace MvcApplication1.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-        
+
         /// <summary>
         /// GrdSection control.
         /// </summary>
