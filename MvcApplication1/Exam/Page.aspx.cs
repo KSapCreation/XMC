@@ -9,6 +9,7 @@ using FBNPC.layers.DataLayers;
 using MvcApplication1.Admin.Layer.Businesslayer;
 using MvcApplication1.Admin.Layer.ModelLayer;
 using System.Drawing;
+using common;
 
 namespace MvcApplication1.Exam
 {
@@ -18,9 +19,10 @@ namespace MvcApplication1.Exam
         ML_ExamTransaction objML_ExamTransaction = new ML_ExamTransaction();
         BL_ExamTransaction objBL_ExamTransaction = new BL_ExamTransaction();
         string DocTypeValue = string.Empty;
+        
+        
         protected void Page_Load(object sender, EventArgs e)
-        {
-            DocTypeValue = "Multiple";
+        {           
            
             if (Session["UserName"] == null)
             {
@@ -28,9 +30,8 @@ namespace MvcApplication1.Exam
             }
             if (!IsPostBack)
             {
-                if (Session["ExamDocType"] == DocTypeValue)
-                {
-                    blExamDocType = true;
+                if (Session["ExamDocType"].ToString() == "Multiple")
+                {                    
                     BindCollection();
                     BindVideoCollection();
                     BindReadingCollection();
@@ -46,7 +47,16 @@ namespace MvcApplication1.Exam
                 //BindExamSheet();
                 //BindExamAudio();
             }
+            if (Session["ExamDocType"].ToString() == "Multiple")
+            {
+                blExamDocType = true;
+            }
+            else
+            {
+                blExamDocType = false;
+            }
         }
+
         protected void UpdateTimer_Tick(object sender, EventArgs e)
         {
             Session["Username"] = SessionExpireStop.Text;
