@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Exam {
-    
-    
-    public partial class Exam {
-        
+namespace MvcApplication1.Exam
+{
+
+
+    public partial class Exam
+    {
+
         /// <summary>
         /// head control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// style_components control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlLink style_components;
-        
+
         /// <summary>
         /// style_color control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlLink style_color;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -47,7 +49,52 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// lblTImerCA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTImerCA;
+
+        /// <summary>
+        /// lblExamSectionTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExamSectionTime;
+
+        /// <summary>
+        /// lblTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTime;
+
+        /// <summary>
+        /// timer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer timer1;
+
         /// <summary>
         /// logoutmale control.
         /// </summary>
@@ -56,7 +103,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage logoutmale;
-        
+
         /// <summary>
         /// logoutFemale control.
         /// </summary>
@@ -65,7 +112,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage logoutFemale;
-        
+
         /// <summary>
         /// lblStudentLOginName control.
         /// </summary>
@@ -74,7 +121,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStudentLOginName;
-        
+
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>

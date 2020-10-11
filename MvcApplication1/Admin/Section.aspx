@@ -57,12 +57,28 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-3">                              
+                                                 <div class="col-md-3">                           
+                                                           <label class="control-label">Section Time</label>
+                                                        <asp:TextBox ID="txtTime" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>                      
+                                                </div>
+                                                    <div class="col-md-3">                           
+                                                           <label class="control-label">Time Type</label>
+                                                       <asp:DropDownList ID="ddlTimeType" runat="server" CssClass="form-control">
+                                                           <asp:ListItem Text="Min" Value="Min"></asp:ListItem>
+                                                           <asp:ListItem Text="Hour" Value="Hour"></asp:ListItem>
+                                                       </asp:DropDownList>                   
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">   
+                                                     <label class="control-label">&nbsp;</label>
                                                        <asp:RadioButton ID="rbtnMultiple" runat="server" CssClass="form-control" Text="Multiple" Checked="true" GroupName="gpselection" />
                                                     </div>
-                                                    <div class="col-md-3">                           
+                                                    <div class="col-md-3">
+                                                          <label class="control-label">&nbsp;</label>
                                                         <asp:RadioButton ID="rbtnIndividual" runat="server" CssClass="form-control" Text="Individual" GroupName="gpselection" />                             
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="form-actions right">
@@ -97,6 +113,12 @@
                                         <asp:Label ID="lblDoctype" runat="server" Text='<%# Eval("Description") %>' ></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>       
+                                 <asp:TemplateField HeaderText="Section Time / Type">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblSectionTime" runat="server" Text='<%# Eval("SectionTime") %>' ></asp:Label>&nbsp;&nbsp;
+                                         <asp:Label ID="lblTimeTYpe" runat="server" Text='<%# Eval("TimeType") %>' ></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>      
                                 <asp:TemplateField HeaderText="Doc Type">
                                     <ItemTemplate>
                                         <asp:Label ID="lblType" runat="server" Text='<%# Eval("DocType") %>' ></asp:Label>

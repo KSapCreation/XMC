@@ -75,5 +75,13 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_ExamTransaction.DL_ShowIndividualQuestion(objML_ExamTransaction);
         }
+        public DataTable BL_GetSectionTime(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_GetSectionTime(objML_ExamTransaction);
+        }
+        public DataTable BL_CurrentDateTime(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_CurrentDateTime(objML_ExamTransaction);
+        }
     }
 }

@@ -33,9 +33,9 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                     new SqlParameter("@SectionName",objML_ExamMaster.SectionName),
                                     new SqlParameter("@SectionDesc",objML_ExamMaster.Description),
                                     new SqlParameter("@CreatedBy",objML_ExamMaster.CreatedBy),
-                                      new SqlParameter("@ModifyBy",objML_ExamMaster.ModifyBy),                      new SqlParameter("@DocType",objML_ExamMaster.DocType)
-
-
+                                      new SqlParameter("@ModifyBy",objML_ExamMaster.ModifyBy),                      new SqlParameter("@DocType",objML_ExamMaster.DocType),
+                                      new SqlParameter("@SectionTime",objML_ExamMaster.SectionTime),
+                                      new SqlParameter("@TimeType",objML_ExamMaster.TimeType)
                                };
             return SqlHelper.ExecuteNonQuery(con, "FBNPC_Sections_Insert", par);
         }

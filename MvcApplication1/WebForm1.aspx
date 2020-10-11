@@ -36,6 +36,107 @@
 <input type="text" id="txtIPAdress" />
 <input type="text" id="txtComputerName" />
     </div>
+
+
+        <input type="text" readonly ="true" size="8" id="counter" runat="server" style="text-align:center; font-size:x-large; font-weight:bold; color:Red;"/>
+
+        <input type="hidden" size="8" id="HidHours" value="3" runat="server"/>
+
+<input type="hidden" size="8" id="HidMinutes" value="" runat="server"/>
+
+<input type="hidden" size="8" id="HidSeconds" value="" runat="server"/>
+
+
+        <script>
+
+            var hours = document.getElementById('HidHours').value;
+
+            var minutes = document.getElementById('HidMinutes').value;
+
+            var seconds = document.getElementById('HidSeconds').value;
+
+            function
+
+                display() {
+
+                if (seconds <= 0) {
+
+                    if ((hours == 0) && (minutes == 0))
+
+                        seconds = 0;
+
+                    else {
+
+                        seconds = 60;
+
+                        minutes -= 1;
+
+                    }
+
+                }
+
+                if (minutes <= 0) {
+
+                    if ((hours < 0) && (minutes < 0)) {
+
+                        hours = minutes = seconds = 0;
+
+                    }
+
+                    else {
+
+                        if ((hours == 0) && (minutes == 0))
+
+                            hours = minutes = 0;
+
+                        if ((hours > 0) && (minutes < 0)) {
+
+                            minutes = 59;
+
+                            hours -= 1;
+
+                        }
+
+                    }
+
+                }
+
+                if ((minutes <= -1) || (hours <= -1)) {
+
+                    if (hours <= -1) {
+
+                        minutes = 0;
+
+                        hours += 1;
+
+                    }
+
+                    else
+
+                        minutes -= 1;
+
+                    seconds = 0;
+
+                    minutes += 1;
+
+                }
+
+                else
+
+                    if (seconds > 0)
+
+                        seconds -= 1;
+
+                document.getElementById('counter').value = hours +": "+minutes +": "+seconds;
+
+                setTimeout("display() ", 1000);
+
+            }
+
+            display();
+
+        </script>
+
     </form>
 </body>
 </html>

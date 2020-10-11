@@ -26,6 +26,8 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string TearmsConditions { get; set; }
         public string StudentName { get; set; }
         public string DocType { get; set; }
+        public decimal SectionTime { get; set; }
+        public string TimeType { get; set; }
 
 
 

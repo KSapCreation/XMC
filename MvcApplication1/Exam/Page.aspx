@@ -125,21 +125,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    
     <div class="page-content">
         <div class="container">
-            <%--<asp:UpdatePanel runat="server" ID="UpdatePanel2" UpdateMode="Always">
-                <%--<Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="UpdateTimer" EventName="Tick" />
-                </Triggers>
-                <ContentTemplate>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="countdown"></div>
-                        </div>
-                    </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>--%>
+           
           
      <% if (blExamDocType)
          { %>
@@ -247,7 +236,7 @@
                 <div class="col-sm-12">
                     <div class="ColectionPage">
                         <asp:Label ID="Label2" runat="server" Visible="false" ForeColor="White" CssClass="blink"></asp:Label>
-                        <asp:DataList ID="DlIndividual" runat="server" RepeatDirection="Vertical" RepeatLayout="Table" RepeatColumns="15" CellPadding="200">
+                        <asp:DataList ID="DlIndividual" runat="server" RepeatDirection="Horizontal" RepeatLayout="Table"  CellPadding="200">
                             <ItemTemplate>
                                 <asp:Label ID="lblID" runat="server" Text='<%#Eval("QuestionID")%>' Visible="false"></asp:Label><span style="color: white;">-</span>
                                 <asp:LinkButton ID="LinkButton3" runat="server" OnClick="ShowIndividualQuestion" Style="border-width: 1px; border-style: Solid; border-radius: 10px; font-weight: 600; border-color: white;">

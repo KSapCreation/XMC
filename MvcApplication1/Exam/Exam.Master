@@ -47,11 +47,13 @@
 
                 
         <!-- End -->
+		
       
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+		 <asp:ScriptManager ID="ScriptManager1" runat="server" />
 <!-- BEGIN HEADER -->
 <div class="page-header">
 	<!-- BEGIN HEADER TOP -->
@@ -68,9 +70,33 @@
 			<!-- BEGIN TOP NAVIGATION MENU -->
            
 			<div class="top-menu">
+				<!-- Timer  -->
+				
+        
+				<!-- end timer -->
           
-				<ul class="nav navbar-nav pull-right">		
-                
+				<ul class="nav navbar-nav pull-right">
+					  <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">					               
+                   
+                   <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+							<h4>Current Time</h4>
+                              <asp:Label ID="lblTImerCA" Text="" runat="server" />    
+							<asp:Label ID="lblExamSectionTime" Text="" runat="server" Visible="false" />    
+							</ContentTemplate>
+                    </asp:UpdatePanel>
+					</li>
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+						               
+                   
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+							<h4>Current Session</h4>
+                            <asp:Label ID="lblTime" Text="undefined" runat="server" />						    
+                                 <asp:Timer ID="timer1" runat="server" Interval="1000" OnTick="timer10" ></asp:Timer>                      
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+					</li>
 					<!-- BEGIN USER LOGIN DROPDOWN -->
                     
 				<li class="dropdown dropdown-user dropdown-dark">
@@ -196,10 +222,9 @@
 
       <!-- Timer Screipt -->
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="TimerCounter/countdown/jquery.countdown.js"></script>
-		<script src="TimerCounter/js/script.js"></script>
+		
 
-   
+		
     </form>
 </body>
 </html>

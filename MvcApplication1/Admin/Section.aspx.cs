@@ -60,6 +60,10 @@ namespace MvcApplication1.Admin
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Fill Section Name');", true);
                 }
+                else if (txtTime.Text == "")
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Fill Section Time');", true);
+                }
                 else if (btnSave.Text == "Save")
                 {
                     con.Open();
@@ -96,7 +100,8 @@ namespace MvcApplication1.Admin
                     {
                         objML_ExamMaster.DocType = rbtnIndividual.Text != "" ? rbtnIndividual.Text : null;
                     }
-                    
+                    objML_ExamMaster.SectionTime = Convert.ToDecimal(txtTime.Text != "" ? txtTime.Text : null);
+                    objML_ExamMaster.TimeType = ddlTimeType.SelectedValue != "" ? ddlTimeType.SelectedValue : null;
                     int x = objBL_ExamMaster.BL_InsSection(objML_ExamMaster);
                     if (x == 1)
                     {
@@ -121,6 +126,8 @@ namespace MvcApplication1.Admin
                     {
                         objML_ExamMaster.DocType = rbtnIndividual.Text != "" ? rbtnIndividual.Text : null;
                     }
+                    objML_ExamMaster.SectionTime = Convert.ToDecimal(txtTime.Text != "" ? txtTime.Text : null);
+                    objML_ExamMaster.TimeType = ddlTimeType.SelectedValue != "" ? ddlTimeType.SelectedValue : null;
                     int x = objBL_ExamMaster.BL_InsSection(objML_ExamMaster);
                     if (x == 1)
                     {
@@ -145,6 +152,8 @@ namespace MvcApplication1.Admin
             txtDesc.Text = "";
             lblID.Text = "";
             btnSave.Text = "Save";
+            txtTime.Text = "";
+
 
         }
         protected void Delete(object sender, EventArgs e)
@@ -189,6 +198,8 @@ namespace MvcApplication1.Admin
                             rbtnIndividual.Checked = true;
                             rbtnMultiple.Checked = false;
                         }
+                        txtTime.Text= dt.Rows[0]["SectionTime"].ToString();
+                        ddlTimeType.SelectedValue = dt.Rows[0]["TimeType"].ToString();
                         btnSave.Text = "Update";
                     }
                 }

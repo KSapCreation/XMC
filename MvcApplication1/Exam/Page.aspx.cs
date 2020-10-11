@@ -55,17 +55,54 @@ namespace MvcApplication1.Exam
             {
                 blExamDocType = false;
             }
+            //DataTable dt = new DataTable();
+            ////dt.Columns.Add("EndDate", typeof(DateTime));
+            ////dt.Rows.Add("2020-06-10 15:45:34.943");
+            //DateTime startDate = DateTime.Now;
+            //DateTime endDate = Convert.ToDateTime(dt.Rows[0]["EndDate"].ToString());
+            //lblTime.Text = CalculateTimeDifference(startDate, endDate);
         }
+        public void BindSectionTime()
+        {
+            DataTable dt = new DataTable();
+            objML_ExamTransaction.ExamName = Session["ExamName"].ToString();
+            dt = objBL_ExamTransaction.BL_GetSectionTime(objML_ExamTransaction);
+            if(dt.Rows.Count>0)
+            {
+                DateTime startDate = DateTime.Now;
+                DateTime endDate = Convert.ToDateTime(dt.Rows[0]["EndDate"].ToString());
+                //  lblTime.Text = CalculateTimeDifference(startDate, endDate);
+            }
 
+        }
+        public string CalculateTimeDifference(DateTime startDate, DateTime endDate)
+        {
+            int days = 0; int hours = 0; int mins = 0; int secs = 0;
+            string final = string.Empty;
+            if (endDate > startDate)
+            {
+                days = (endDate - startDate).Days;
+                hours = (endDate - startDate).Hours;
+                mins = (endDate - startDate).Minutes;
+                secs = (endDate - startDate).Seconds;
+                final = string.Format("{0} days {1} hours {2} mins {3} secs", days, hours, mins, secs);
+            }
+            return final;
+        }
         protected void UpdateTimer_Tick(object sender, EventArgs e)
         {
             Session["Username"] = SessionExpireStop.Text;
+        }
+        protected void GetTime(object sender, EventArgs e)
+        {
+          //  lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void BindIndividualQuestionCollection()
         {
             DataTable dt = new DataTable();
-            objML_ExamTransaction.ID = Session["ExamName"].ToString();            
+            objML_ExamTransaction.ID = Session["ExamName"].ToString();
+            objML_ExamTransaction.StudentName = Session["UserName"].ToString();
             dt = objBL_ExamTransaction.BL_BindIndividualCollection(objML_ExamTransaction);
             if (dt.Rows.Count > 0)
             {
