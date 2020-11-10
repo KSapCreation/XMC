@@ -101,21 +101,7 @@
                         </asp:GridView>
                     </div>
                     <!-- end container -->
-                     <div class="footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="pull-right hidden-xs">
-                                        Project Completed <strong class="text-custom">80%</strong>.
-                                    </div>
-                                    <div>
-                                        <strong>K Sap Creations</strong> - Copyright &copy; 2018
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end footer -->
-
+               
               
 
                 <div class="clearfix"></div>

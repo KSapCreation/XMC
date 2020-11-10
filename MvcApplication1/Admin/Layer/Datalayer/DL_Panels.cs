@@ -59,8 +59,7 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                       new SqlParameter("@ModifyBy",objML_Panels.ModifyBy),
                                       new SqlParameter("@DocType",objML_Panels.DocType),
                                       new SqlParameter("@ID",objML_Panels.ID),
-                                      new SqlParameter("@ImageID",objML_Panels.ImageID)
-                                    
+                                      new SqlParameter("@ImageID",objML_Panels.ImageID)           
                                };
             return SqlHelper.ExecuteNonQuery(con, "FBNPC_Our_Programs_Insert", par);
         }
@@ -224,6 +223,12 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                     
                                };
             return SqlHelper.ExecuteDataset(con, "FBNPC_Comprehension_Select", par).Tables[0];
+        }
+        public DataTable DL_BindAchieverList(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID)
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_Achiever_Bind", par).Tables[0];
         }
     }
 }

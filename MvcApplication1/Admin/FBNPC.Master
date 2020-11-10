@@ -65,6 +65,7 @@
                                                 <li><a href="About#One">About Us</a></li>    
                                                 <li><a href="Gallery#One">Our Gallery</a></li> 
                                                 <li><a href="RegisterList">List of Registration</a></li>  
+                                                 <li><a href="Achiever">Our Achievers</a></li>
                                                  <li class="has-submenu">
                                                     <a href="#">Masters</a>
                                                     <ul class="submenu">

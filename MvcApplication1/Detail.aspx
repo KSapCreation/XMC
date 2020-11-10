@@ -24,11 +24,12 @@ Style Sheets
     <link href="Admin/FBNPC/css/components-rounded.css" rel="stylesheet" />
 <script src="assets/js/lib/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="assets/demo-data/logoTitle.png">
-          <script type="text/javascript">
+    <link href="assets/css/shortcodes.css" rel="stylesheet" />
+          <%--<script type="text/javascript">
               document.addEventListener("contextmenu", function (e) {
                   e.preventDefault();
               }, false);
-    </script>
+    </script>--%>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -81,8 +82,9 @@ Style Sheets
                            </asp:DataList>
                            </ul>                        
                        </li>
-                        <li><a href="batches.aspx">Batches</a></li>
-                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>
+                      <%--  <li><a href="batches.aspx">Batches</a></li>
+                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>--%>
+                        <li><a href="OurAchiever.aspx">Our Achiever</a></li>
                         <li><a href="gal.aspx">Our Gallery</a></li>
                         <li><a href="contact.aspx">Contact</a></li>
                         
@@ -101,22 +103,67 @@ Style Sheets
             </div>
         </div>
 
-        <section>
-        <div class="container">
+        <div class="row">   
+            <div class="col-sm-3">
+                <div class="general-sidebars" style="margin-top: 16%;margin-left:5%;">
+                        <div class="sidebar-wrap">
+                            <div class="sidebar" style="background: #ffffff;">
+                               
+
+                                <div class="widget widget_recent_entries">
+                                    <h4 class="widget-title">Recent news</h4>
+                                    <marquee direction="up" height="200px" scrollamount="5">
+                                    <ul>
+                                        <li>
+                                            <a href="blog-single.html">Raising productivity &amp; morale in the warehouse</a>
+                                            <span class="post-date">March 25, 2016</span>
+                                        </li>
+                                        <li>
+                                            <a href="blog-single.html">Seafield logistics goes into administration</a>
+                                            <span class="post-date">March 25, 2016</span>
+                                        </li>
+                                    </ul>
+                                        </marquee>
+                                </div><!-- /.widget_recent_entries -->
+
+                                <div class="widget widget_text">
+                                    <div class="textwidget">
+                                        <div class="content-text">
+                                            <h4 class="title">Why choose us?</h4>
+                                            <ul>
+                                                <li><i class="fa fa-arrow-circle-right"></i> Learn from Canada’s best, highly qualified, and experienced educators</li>
+                                                <li><i class="fa fa-arrow-circle-right"></i> Unique online learning experience to accommodate your learning style</li>
+                                                <li><i class="fa fa-arrow-circle-right"></i> Custom exam software for NCLEX and CPNRE style Mock tests</li>
+                                                <li><i class="fa fa-arrow-circle-right"></i> Evidence based curriculum to inculcate core nursing competencies</li>
+                                                <li><i class="fa fa-arrow-circle-right"></i>  Excellent support system to reduce exam anxiety and stress related to it</li>
+                                                <li><i class="fa fa-arrow-circle-right"></i> Excellent Customer Service</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- /.textwidget -->
+                                </div><!-- /.widget_text -->
+
+                            </div><!-- /.sidebar -->
+                        </div><!-- /.sidebar-wrap -->
+                    </div>
+                </div>
+            <div class="col-sm-9">
+                 
+        <div class="container" style="margin-top:5%">
             <asp:DataList ID="dlShowPrograms" runat="server" RepeatColumns="1" RepeatDirection="Horizontal">
                 <ItemTemplate>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="portlet light bg-inverse">
+                            <div class="portlet light bg-inverse" style="background :#ffffff6b;">
                                 <div class="portlet-title">
                                     <div class="caption font-purple-plum">
                                         <i class="icon-speech font-purple-plum"></i>
-                                        <span class="caption-subject bold uppercase">
-                                            <asp:Label ID="lblTitleName" runat="server" Text='<%#Eval("TitleName")%>'></asp:Label></span>
+                                        <h2 style="font-weight:500">
+                                        <span class="flat-title-section style">
+                                            <asp:Label ID="lblTitleName" runat="server" Text='<%#Eval("TitleName")%>'></asp:Label></span></h2>
 
                                     </div>                                  
                                 </div>
-                                <div class="portlet-body">
+                                <div class="portlet-body" style="background: honeydew; border-radius: 10px; padding-left: 25px; padding-bottom: 10px; padding-right: 10px;">
                                     <div id="context" data-toggle="context" data-target="#context-menu">
                                         <p>
                                             <asp:Label ID="lblTitleDesc" runat="server" Text='<%#Eval("TitleDescription")%>'></asp:Label>
@@ -125,7 +172,7 @@ Style Sheets
                                             <a href="contact.aspx">Contact Us</a>
                                         </h3>
                                     </div>
-                                  
+
                                 </div>
                             </div>
                         </div>
@@ -135,8 +182,11 @@ Style Sheets
                                     
                     
         </div>
-    </section>
+   
 
+            </div>
+        </div>
+       
          
 
         <footer class="bg-white pt-35">
@@ -149,12 +199,12 @@ Style Sheets
                         </div>
                     <div class="col-sm-4 mt-40 recent-posts">
                         <h6 class="text-bold text-uppercase after-left-s pb-20 mb-20">Recent posts</h6>
-                        <div class="fb-page" data-href="https://www.facebook.com/yourdoorstp/" data-tabs="timeline" data-width="350" data-height="250" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/yourdoorstp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourdoorstp/">Future Building Nursing Prep Centre</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/yourdoorstp/" data-tabs="timeline" data-width="450" data-height="250" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/yourdoorstp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourdoorstp/">Future Building Nursing Prep Centre</a></blockquote></div>
                     </div>
                     
                 </div>
                 <div class="rights mt-60 pt-15 pb-10">
-                    Made by <a href="#">KSapCreations</a> &copy;
+                    Made by <a href="http://www.ksapcn.com" target="_blank">KSap Creation</a> &copy;
                 </div>
             </div>
         </footer>

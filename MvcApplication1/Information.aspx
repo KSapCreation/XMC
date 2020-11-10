@@ -80,8 +80,9 @@ Style Sheets
                            </asp:DataList>
                            </ul>                        
                        </li>
-                        <li><a href="batches.aspx">Batches</a></li>
-                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>
+              <%--          <li><a href="batches.aspx">Batches</a></li>
+                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>--%>
+                        <li><a href="OurAchiever.aspx">Our Achiever</a></li>
                         <li><a href="gal.aspx">Our Gallery</a></li>
                         <li><a href="contact.aspx">Contact</a></li>
                         

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1 {
-    
-    
-    public partial class Detail {
-        
+namespace MvcApplication1
+{
+
+
+    public partial class Detail
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MvcApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// DLMenu control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MvcApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList DLMenu;
-        
+
         /// <summary>
         /// dlShowPrograms control.
         /// </summary>

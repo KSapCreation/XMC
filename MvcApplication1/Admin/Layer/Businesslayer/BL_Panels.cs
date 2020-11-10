@@ -105,5 +105,9 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_Panels.DL_BindComprehension(objML_Panels);
         }
+        public DataTable BL_BindAchieverList(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_BindAchieverList(objML_Panels);
+        }
     }
 }

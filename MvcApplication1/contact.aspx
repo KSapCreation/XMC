@@ -85,8 +85,9 @@ Body Content
                            </asp:DataList>
                            </ul>                        
                        </li>
-                        <li><a href="batches.aspx">Batches</a></li>
-                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>
+                     <%--   <li><a href="batches.aspx">Batches</a></li>
+                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>--%>
+                        <li><a href="OurAchiever.aspx">Our Achiever</a></li>
                         <li><a href="gal.aspx">Our Gallery</a></li>
                         <li class="active"><a href="contact.aspx">Contact</a></li>
                         
@@ -165,12 +166,12 @@ Body Content
                         </div>
                     <div class="col-sm-4 mt-40 recent-posts">
                         <h6 class="text-bold text-uppercase after-left-s pb-20 mb-20">Recent posts</h6>
-                        <div class="fb-page" data-href="https://www.facebook.com/yourdoorstp/" data-tabs="timeline" data-width="350" data-height="250" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/yourdoorstp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourdoorstp/">Future Building Nursing Prep Centre</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/yourdoorstp/" data-tabs="timeline" data-width="450" data-height="250" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/yourdoorstp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourdoorstp/">Future Building Nursing Prep Centre</a></blockquote></div>
                     </div>
                     
                 </div>
                 <div class="rights mt-60 pt-15 pb-10">
-                    Made by <a href="#">KSapCreations</a> &copy;
+                    Made by <a href="http://www.ksapcn.com" target="_blank">KSap Creation</a> &copy;
                 </div>
             </div>
         </footer>

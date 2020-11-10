@@ -23,11 +23,11 @@ Style Sheets
 <link rel="stylesheet" href="assets/css/main.css">
     
     <link rel="shortcut icon" href="assets/demo-data/logoTitle.png">
-       <script type="text/javascript">
+<%--      <script type="text/javascript">
            document.addEventListener("contextmenu", function (e) {
                e.preventDefault();
            }, false);
-    </script>
+    </script>--%>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -76,8 +76,8 @@ Style Sheets
                            </asp:DataList>
                            </ul>                        
                        </li>
-                        <li><a href="batches.aspx">Batches</a></li>
-                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>
+                        <li><a href="OurAchiever.aspx">Our Achiever</a></li>
+                        <%--<li><a href="StudyMaterial.aspx">Study Materials</a></li>--%>
                        <%--<li class="parent"><a href="#">Our Programs</a>
                             <ul>
                                 <li><a href="CELBAN.aspx">CELBAN</a></li>
@@ -126,7 +126,7 @@ Style Sheets
                         </div>--%>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="hovereffect">
-                                <img class="img-responsive" src='<%# "Handler1.ashx?ImgID="+ Eval("GalleryID") %>' alt="">
+                                <img class="img-responsive" src='<%# "Handler1.ashx?ImgID="+ Eval("GalleryID") %>' alt="" width="300" style="height:200px"; />
                                 <div class="overlay">
                                     <h2><asp:Label ID="lblDesc" runat="server" Text ='<%# Eval("Description") %>'></asp:Label></h2>                                    
                                 </div>
@@ -141,20 +141,25 @@ Style Sheets
                     <span>Latest Video</span>
                 </div>
             </div>  
-            <asp:Label ID="lblVideo" runat="server"></asp:Label>
-            <asp:DataList ID="dlGallery" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
+            <div class="row">
+                <div class="col-sm-12">
+                     <asp:Label ID="lblVideo" runat="server"></asp:Label>
+            <asp:DataList ID="dlGallery" runat="server" RepeatColumns="3" RepeatDirection="Horizontal">
                 <ItemTemplate>
                     <div class="row ">
-                        <div class="col-sm-12 mt-20">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="member bg-white">
                                 <figure>
-                                    <iframe width="400" height="200" src='<%# "https://www.youtube.com/embed/" + Eval("YouTubeLink") %>' frameborder="0" allowfullscreen></iframe></figure>
+                                    <iframe width="300" height="200" src='<%# "https://www.youtube.com/embed/" + Eval("YouTubeLink") %>' frameborder="0" allowfullscreen></iframe></figure>
                             </div>
                         </div>                        
 
                     </div>
                 </ItemTemplate>
             </asp:DataList>
+                </div>
+            </div>
+           
         
 
       
@@ -164,7 +169,7 @@ Style Sheets
             <div class="container">
        
                 <div class="rights mt-60 pt-15 pb-10">
-                    Made by <a href="#">KSapCreations</a> &copy;
+                    Made by <a href="http://www.ksapcn.com" target="_blank">KSap Creation</a> &copy;
                 </div>
             </div>
         </footer>

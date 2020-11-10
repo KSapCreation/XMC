@@ -118,7 +118,7 @@ q::after {
 
 img {
     max-width: 100%;
-    height: auto;
+    /*height: auto;*/
 }
 
 ul {
@@ -1012,7 +1012,7 @@ Inner Pages
 }
 
 .features {
-    background: url(../demo-data/BG1.jpg) no-repeat;
+    background: url(../demo-data/BGA.png) no-repeat;
     background-size: cover;
 }
 .features.style{background: none;}

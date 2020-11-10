@@ -173,20 +173,7 @@
                         </div>
                     </div>
                     <!-- end container -->
-                    <div class="footer" style="position:fixed; background-color:ActiveBorder;">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="pull-right hidden-xs">
-                                        Project Completed <strong class="text-custom">90%</strong>.
-                                    </div>
-                                    <div>
-                                        <strong>KSap Creation</strong> - Copyright &copy; 2018
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end footer -->
+                   
 
                 </div>
                 <!-- End #page-right-content -->

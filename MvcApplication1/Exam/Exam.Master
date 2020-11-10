@@ -86,7 +86,7 @@
 							</ContentTemplate>
                     </asp:UpdatePanel>
 					</li>
-                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
 						               
                    
                     <asp:UpdatePanel runat="server">

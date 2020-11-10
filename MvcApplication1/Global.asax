@@ -35,7 +35,7 @@
         routes.MapPageRoute("Result", "Exam/Result", "~/Exam/Result.aspx");
         routes.MapPageRoute("FBNPCTearms", "Exam/FBNPCTearms", "~/Exam/FBNPCTearms.aspx");
         routes.MapPageRoute("StartExam", "Exam/StartExam", "~/Exam/Page.aspx");
-      
+      routes.MapPageRoute("Achiever", "Admin/Achiever", "~/Admin/Achiever.aspx");
     }
 </script>
 

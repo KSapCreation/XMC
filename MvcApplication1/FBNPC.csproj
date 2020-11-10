@@ -134,6 +134,13 @@
     <Compile Include="Admin\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Achiever.aspx.cs">
+      <DependentUpon>Achiever.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Achiever.aspx.designer.cs">
+      <DependentUpon>Achiever.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AVMaster.aspx.cs">
       <DependentUpon>AVMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -490,6 +497,13 @@
     <Compile Include="LoginIn.aspx.designer.cs">
       <DependentUpon>LoginIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OurAchiever.aspx.cs">
+      <DependentUpon>OurAchiever.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurAchiever.aspx.designer.cs">
+      <DependentUpon>OurAchiever.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OurPrograms.aspx.cs">
       <DependentUpon>OurPrograms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -519,10 +533,18 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="Admin\About.aspx" />
+    <Content Include="Admin\Achiever.aspx" />
     <Content Include="Admin\AVMaster.aspx" />
     <Content Include="Admin\batches.aspx" />
     <Content Include="Admin\Category.aspx" />
@@ -1112,20 +1134,29 @@
     <Content Include="assets\css\animations.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\Detailstyle.css" />
     <Content Include="assets\css\flexslider.css" />
     <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\Global.css" />
     <Content Include="assets\css\jquery.flickr.css" />
     <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\Portfolio.css" />
     <Content Include="assets\css\prettyPhoto.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\shortcodes.css" />
+    <Content Include="assets\css\Slider.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\Gallery.css" />
     <Content Include="assets\css\TabStyle.css" />
+    <Content Include="assets\css\Team.css" />
     <Content Include="assets\css\theme.css" />
     <Content Include="assets\demo-data\962892_orig-480x340.jpg" />
     <Content Include="assets\demo-data\avatar.png" />
     <Content Include="assets\demo-data\bg-001-480x340.png" />
     <Content Include="assets\demo-data\bg-bread.jpg" />
     <Content Include="assets\demo-data\BG1.jpg" />
+    <Content Include="assets\demo-data\BG12.png" />
+    <Content Include="assets\demo-data\BGA.png" />
     <Content Include="assets\demo-data\child.jpg" />
     <Content Include="assets\demo-data\child.png" />
     <Content Include="assets\demo-data\child1.jpg" />
@@ -1137,6 +1168,7 @@
     <Content Include="assets\demo-data\d22 %281%29.jpg" />
     <Content Include="assets\demo-data\d22.jpg" />
     <Content Include="assets\demo-data\default_img.png" />
+    <Content Include="assets\demo-data\Demo\1.png" />
     <Content Include="assets\demo-data\dg.jpg" />
     <Content Include="assets\demo-data\dm %281%29.jpg" />
     <Content Include="assets\demo-data\dm.jpg" />
@@ -1160,7 +1192,9 @@
     <Content Include="assets\demo-data\Logo_fbnpc_new_admin1.png" />
     <Content Include="assets\demo-data\logo_other.png" />
     <Content Include="assets\demo-data\map.png" />
+    <Content Include="assets\demo-data\mock.png" />
     <Content Include="assets\demo-data\Orignal_logo_img.png" />
+    <Content Include="assets\demo-data\OurProgram.png" />
     <Content Include="assets\demo-data\p1.jpg" />
     <Content Include="assets\demo-data\p2.jpg" />
     <Content Include="assets\demo-data\p3.jpg" />
@@ -1184,8 +1218,11 @@
     <Content Include="assets\demo-data\t1.png" />
     <Content Include="assets\demo-data\t2.jpg" />
     <Content Include="assets\demo-data\t3.jpg" />
+    <Content Include="assets\demo-data\testimonal.png" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\img\bg01.png" />
+    <Content Include="assets\img\blog.png" />
+    <Content Include="assets\img\OurProgram1.png" />
     <Content Include="assets\js\app\main.js" />
     <Content Include="assets\js\jquery.hoverfold.js" />
     <Content Include="assets\js\lib\css3-animate-it.js" />
@@ -5396,7 +5433,11 @@
     <Content Include="ExamLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Exam\File.ashx" />
     <Content Include="Exam\Student.Master" />
+    <Content Include="OurAchiever.aspx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="assets\css\_portfolio.scss" />
+    <Content Include="assets\css\_team.scss" />
     <None Include="Properties\PublishProfiles\Deployment.pubxml" />
     <Content Include="Information.aspx" />
     <Content Include="LoginIn.aspx" />

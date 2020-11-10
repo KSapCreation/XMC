@@ -23,13 +23,14 @@ Style Sheets
 <link rel="stylesheet" type="text/css" href="assets/css/prettyPhoto.css">
 <link rel="stylesheet" href="assets/css/main.css">
 
+    
 <script src="assets/js/lib/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="assets/demo-data/Logo_fbnpc_new.png">
-      <script type="text/javascript">
+      <%--<script type="text/javascript">
           document.addEventListener("contextmenu", function (e) {
               e.preventDefault();
           }, false);
-    </script>
+    </script>--%>
    <script>
        $('.multiple-items').slick({
            infinite: true,
@@ -38,6 +39,9 @@ Style Sheets
        });
 
    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="assets/css/Slider.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -93,9 +97,9 @@ Body Content
                            </asp:DataList>
                            </ul>                        
                        </li>
-                        <li><a href="batches.aspx">Batches</a></li>
-                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>
-                        
+                      <%--  <li><a href="batches.aspx">Batches</a></li>
+                        <li><a href="StudyMaterial.aspx">Study Materials</a></li>--%>
+                        <li><a href="OurAchiever.aspx">Our Achiever</a></li>
                      <%-- <li class="parent"><a href="#">Our Programs</a>
                             <ul>
                                 <li><a href="CELBAN.aspx">CELBAN</a></li>
@@ -123,7 +127,7 @@ Body Content
                                             <asp:Label ID="Slider1Title" runat="server"></asp:Label>
                                         </h3>
                                         <p class="animated fadeInRight"><asp:Label ID="Slider1Desc" runat="server"></asp:Label> </p>
-                                        <a href="Exam/RegistrationForm.aspx" class="btn animated fadeInUp">Take Test</a>
+                                        <a href="contact.aspx" class="btn animated fadeInUp">Contact Us </a>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +142,7 @@ Body Content
                                             <asp:Label ID="Slider2Title" runat="server"></asp:Label>
                                         </h3>
                                                 <p class="animated fadeInRight"><asp:Label ID="Slider2Desc" runat="server"></asp:Label> </p>
-                                        <a href="Exam/RegistrationForm.aspx" class="btn animated fadeInUp">Take Test</a>
+                                        <a href="contact.aspx" class="btn animated fadeInUp">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +158,7 @@ Body Content
                                             <asp:Label ID="Slider3Title" runat="server"></asp:Label>
                                         </h3>
                                                 <p class="animated fadeInRight"><asp:Label ID="Slider3Desc" runat="server"></asp:Label> </p>
-                                        <a href="Exam/RegistrationForm.aspx" class="btn animated fadeInUp">Take Test</a>
+                                        <a href="contact.aspx" class="btn animated fadeInUp">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
@@ -163,6 +167,7 @@ Body Content
                 </ul>
             </div>
         </section>
+        
 
         <%--<section class="services bg-blue color-white no-pad clearfix">
             <div class="container">
@@ -187,7 +192,7 @@ Body Content
             </div>
         </section>--%>
 
-        <section class="clearfix animatedParent">
+        <section class="clearfix animatedParent" style="background-color:white;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-sm-6">
@@ -198,29 +203,14 @@ Body Content
                         <a href="about.aspx" class="btn mt-25">Read More</a>
                     </div>
                    <div class="col-md-5 col-sm-6 schedules">
-                        <h3 class="text-bold after-left-l pb-25 mb-55 ls-5">SCHEDULE</h3>
-
-                        <div class="schedule bg-blue1 radius-top color-white clearfix">
-                            <h6 class="text-uppercase text-bold pull-left"><span class="pad">SCHEDULE <br /> Classes</span></h6>
-                            <div class="pull-right text-center">
-                                <strong>MON - FRI</strong><br />
-                                09:00 AM -05:00 PM
-                            </div>
-                        </div>
+                       
+                <figure class="text-center mt-80" style="background:url('assets/demo-data/mock.png')  no-repeat;background-size: cover; height:350px;">
+                        <object data="https://www.youtube.com/embed/kItOu0Fo9oU"
+   width="363" height="240" style="padding-top:18px;" class="embed-responsive-item"></object>
+                    
+                </figure>
+            
                         
-                        <div class="schedule bg-blue3 color-white clearfix">
-                       <h6 class="text-uppercase text-bold pull-left"><span class="pad">SCHEDULE <br /> Classes</span></h6>
-                            <div class="pull-right text-center">
-                                <strong>Flexible Hours</strong><br />
-                                
-                            </div>
-                        </div>
-                        <div class="schedule bg-blue1 radius-top color-white clearfix">
-                             <div class="pull-right text-center">
-                                <strong>Late office hours are available on Request</strong><br />
-                                
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -269,28 +259,161 @@ Body Content
                   
             </div>
         </section>
-          <div class="promo bg-blue4 color-white clearfix pt-20 pb-20">
+          <div class="promo bg-blue4 color-white clearfix pt-20 pb-20" style="background:#aee5fd;">
           </div>
-        <section class="clearfix reviews animatedParent">
+      
+             <section class="latest-posts text-center" style="background:white;">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-sm-4">
+                <h3 class="text-bold text-uppercase text-center after-mid-l pb-25">OUR ACHEIVERS</h3>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="OurAchiever.aspx" class="text-bold" style="color:white;">
+                    <img src="assets/demo-data/demo/1.png" alt="Los Angeles" />
+                    <p>Ramandeep Singh</p>
+                    <p>Regina, CA</p></a>
+                </div>
+
+                <div class="item">
+                    <img src="assets/demo-data/demo/1.png" alt="Chicago"  />
+                    <p>Ramandeep Singh</p>
+                    <p>Regina, CA</p>
+                </div>
+
+                <div class="item">
+                    <img src="assets/demo-data/demo/1.png" alt="New york" />
+                    <p>Ramandeep Singh</p>
+                    <p>Regina, CA</p>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+                </div>
+            <div class="col-sm-8">
+                <h3 class="text-bold text-uppercase text-center after-mid-l pb-25">OUR BLOG</h3>
+               <section class="our-posts">
+            <div class="container" style="margin-top:-80px;">              
+                <div class="row">
+                    <div class="col-sm-4 mt-70">
+                        <div class="post bg-white" style="background:#3f5f90;'">
+                            <figure><img src="assets/img/blog.png" alt="/" /></figure>
+                            <div class="pad">
+                                
+                            <a href="#" class="title text-bold" style="color:white;">Doctor and Patient Doctors as Advocates for Family Leave</a>
+                            <ul>
+                                <li style="color:white;"><i class="fa fa-clock-o"></i>May 9, 2020</li>
+                                <li><i class="fa fa-user"></i><a href="#" style="color:white;">Mike</a></li>
+                                <li><i class="fa fa-folder-open-o"></i><a href="#" style="color:white;">Treatment</a></li>
+                            </ul>
+                            <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 mt-70">
+                        <div class="post bg-white" style="background:#3f5f90;">
+                            <figure><img src="assets/img/blog.png" alt="/" /></figure>
+                            <div class="pad">
+                            <a href="#" class="title text-bold" style="color:white;">Graphene’s Prospects in Biosensing Just Got a Boost</a>
+                            <ul style="color:white;">
+                                <li style="color:white;"><i class="fa fa-clock-o"></i>May 9, 2020</li>
+                                <li><i class="fa fa-user"></i><a href="#" style="color:white;">Mike</a></li>
+                                <li><i class="fa fa-folder-open-o"></i><a href="#" style="color:white;">Treatment</a></li>
+                            </ul>
+                            <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+                </div>
+        </div>
+        
+        
+        
+            
+    </div>
+</section>
+              
+        <div class="promo bg-blue4 color-white clearfix pt-20 pb-20">
+          </div>
+        <section class="clearfix reviews animatedParent" style="background: url(../assets/demo-data/OurProgram.png) no-repeat;background-size: cover;">
             <div class="container">
+                
                 <h3  class="text-bold text-uppercase after-mid-l pb-25 text-center">OUR PROGRAMS</h3>
                 <section class="b-advantages b-advantages-2 b-advantages_6-col">
+                    <div class="row">     
+                        <div class="col-sm-2">
+                             <img src="assets/img/OurProgram1.png" />
+                                                            <h5>CELBAN
+                                                                </h5>
+                            </div>
+                          <div class="col-sm-2">
+                             <img src="assets/img/OurProgram2.png" />
+                                                            <h5>NCLEX
+                                                                </h5>
+                            </div>
+                          <div class="col-sm-2">
+                             <img src="assets/img/OurProgram3.png" />
+                                                            <h5>OSCE <br />(IENCAP)
+                                                                </h5>
+                            </div>
+                       
+                         
+                      
+                    </div>
                     <div class="row">
-                        <div class="col-md-12">
+                         <div class="col-sm-2">
+                             <img src="assets/img/OurProgram1.png" />
+                                                            <h5>CPNRE
+                                                                </h5>
+                            </div>
+                        <div class="col-sm-2">
+                             <img src="assets/img/OurProgram1.png"" />
+                                                            <h5>IELTS
+                                                                </h5>
                             <asp:Panel ID="pnl" runat="server" ScrollBars="Auto">
-                                <asp:DataList ID="dlPrograms" runat="server" RepeatColumns="5" RepeatDirection="Horizontal" RepeatLayout="Table">
+                                <asp:DataList ID="dlPrograms" runat="server" RepeatColumns="3" RepeatDirection="Vertical" RepeatLayout="Table" Visible="false">
                                     <ItemTemplate>
-                                        <table>
+                                        <table class="table-responsive">
                                             <tr>
                                                 <td>
-                                                    <div class="b-advantages__inner effect-border">
+                                                     <img src="assets/img/OurProgram1.png" />
+                                                            <h3><asp:LinkButton ID="linkShow" runat="server" OnClick="EditShow">
+                                                                <asp:Label ID="lblDesc1" runat="server" Text='<%#Eval("TitleName")%>'></asp:Label>
+                                                            </asp:LinkButton>
+                                                            <asp:Label ID="lblID" runat="server" Text='<%#Eval("ProgramsID")%>' Visible="false"></asp:Label></h3>
+                                                    <%--<div class="b-advantages__inner effect-border" style="width:220px;">
                                                         <h3 class="b-advantages__title ui-title-inner">
                                                             <asp:LinkButton ID="linkShow" runat="server" OnClick="EditShow">
                                                                 <asp:Label ID="lblDesc1" runat="server" Text='<%#Eval("TitleName")%>'></asp:Label>
                                                             </asp:LinkButton>
                                                             <asp:Label ID="lblID" runat="server" Text='<%#Eval("ProgramsID")%>' Visible="false"></asp:Label>
                                                         </h3>
-                                                    </div>
+                                                    </div>--%>
                                                 </td>
                                             </tr>
                                         </table>
@@ -299,60 +422,25 @@ Body Content
 
                                 </asp:DataList>
                             </asp:Panel>
-                             <a href="OurPrograms.aspx" class="btn mt-25">Read More</a>
+                            
                         </div>
                     </div>
+                      <div class="row">
+                         <a href="OurPrograms.aspx" class="btn mt-25">Read More</a>
+                            </div>
                 </section>            
                 
             </div>
             
         </section>
-     
-          <div class="promo bg-blue4 color-white clearfix pt-20 pb-20">
-               </div>
-        <%--<section class="clearfix bg-white our-doctors animatedParent">
-            <div class="container">
-                <h3 class="text-bold text-center text-uppercase after-mid-l pb-25">OUR CENTER</h3>
-                
-                <div class="row color-white">
-                    <div class="col-sm-3 mt-50 no-pad doctor style1 bg-blue1 animated fadeInLeft">
-                        <figure><img src="assets/demo-data/dm.jpg" alt="/"></figure>
-                        <div class="info">
-                        <h6 class="text-bold text-uppercase after-left-s pb-20">Sara Doe</h6>
-                        <p>Tooth Specialist</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 mt-50 no-pad doctor style2 bg-blue2 animated fadeInLeft">
-                        <div class="info">
-                        <h6 class="text-bold text-uppercase after-left-s pb-20">John Doe</h6>
-                        <p>Heart Specialist</p>
-                        </div>
-                        <figure><img src="assets/demo-data/d12.jpg" alt="/"></figure>
-                    </div>
-                    <div class="col-sm-3 mt-50 no-pad doctor style1 bg-blue3 animated fadeInLeft">
-                        <figure><img src="assets/demo-data/d22.jpg" alt="/"></figure>
-                        <div class="info">
-                        <h6 class="text-bold text-uppercase after-left-s pb-20">Umar Doe</h6>
-                        <p>Eye Specialist</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 mt-50 no-pad doctor style2 bg-blue4 animated fadeInLeft">
-                        <div class="info">
-                        <h6 class="text-bold text-uppercase after-left-s pb-20">Emma Doe</h6>
-                        <p>Child Specialist</p>
-                        </div>
-                        <figure><img src="assets/demo-data/dr.jpg" alt="/"></figure>
-                    </div>
-                </div>
-            </div>
-        </section>--%>
+  
 
-        <section class="our-posts">
+        <section class="clearfix reviews animatedParent" style="background:url('assets/demo-data/testimonal.png')no-repeat;background-size:cover;">
             <div class="container">
                 <h3 class="text-bold text-uppercase after-mid-l pb-25 text-center">Testimonials</h3>
                 
                 <div class="row">
-                    <div class="col-md-12" style="background-color: white;border-radius: 11px;">
+                    <div class="col-md-12" style="border-radius: 6px;">
                                      <marquee direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll" height="200px">     
 
                             <asp:DataList ID="DlTestimonials" runat="server" RepeatColumns="1" RepeatDirection="Vertical" >
@@ -362,9 +450,10 @@ Body Content
                                                 
                                                 <table>
                                                     <tr>
-                                                        <td>
-                                                           ( <asp:Label ID="lblSrno" runat="server" Text='<%#Eval("Srno")%>'></asp:Label> )
-                                                             <b><asp:Label ID="Label1" runat="server" Text='<%#Eval("TitleName")%>'></asp:Label></b>
+                                                        <td><span style="color:#b43434;">
+                                                           ( <asp:Label ID="lblSrno" runat="server" Text='<%#Eval("Srno")%>'></asp:Label> )</span>
+                                                             <b><asp:Label ID="Label2" runat="server" Text='<%#Eval("TitleName")%>' ForeColor="#274da8"></asp:Label><span style="color:#274da8;"> says...</span></b>
+                                                            
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -385,22 +474,19 @@ Body Content
                                 </ItemTemplate>
                             </asp:DataList>
                              </marquee>
-                                          
-                                        
+                                                                                 
                         
                             
                         <a href="Testimonials.aspx" class="btn mt-25">Read More</a>
                     </div>
                 </div>
-                           
+  
                 </div>
-          <%--  <div class="row">
-                <div class="col-sm-12">
-                    <a href="Testimonials.aspx" class="btn">Read More</a>
-                </div>
-            </div>    --%>
+        
             
         </section>
+
+        
 
         <div class="promo bg-blue4 color-white clearfix pt-20 pb-20">         
         </div>
@@ -410,18 +496,18 @@ Body Content
                 <div class="row">
                     <div class="col-sm-6 mt-40">
                         <h6 class="text-bold text-uppercase after-left-s pb-20 mb-20">Words from our Acheivers</h6>
-         <object data="https://www.youtube.com/embed/LCt3Hypz9aE"
+         <object data="https://www.youtube.com/embed/jeXvwtI_TfM"
    width="450" height="250"></object>
                         </div>
                     <div class="col-sm-4 mt-40 recent-posts">
                         <h6 class="text-bold text-uppercase after-left-s pb-20 mb-20">Recent posts</h6>
-                        <div class="fb-page" data-href="https://www.facebook.com/yourdoorstp/" data-tabs="timeline" data-width="350" data-height="250" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/yourdoorstp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourdoorstp/">Future Building Nursing Prep Centre</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/yourdoorstp/" data-tabs="timeline" data-width="450" data-height="250" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/yourdoorstp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourdoorstp/">Future Building Nursing Prep Centre</a></blockquote></div>
                     </div>
                     
                 </div>
                
                          <div class="rights mt-60 pt-15 pb-10">
-                    Made by <a href="http://www.sapcreation.com">KSapCreations</a> &copy;
+                    Made by <a href="http://www.ksapcn.com" target="_blank">KSap Creation</a> &copy;
 
                               <span id="siteseal" style="padding-left:60%;"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=9UIAOM0d8Jh1G3ZEC4xR6xKAmLELqSTht1DssmGbAD5w6tOl57dzmW81GRIh"></script></span>
                         </div>
