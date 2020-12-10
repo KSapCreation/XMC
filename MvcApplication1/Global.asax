@@ -36,6 +36,10 @@
         routes.MapPageRoute("FBNPCTearms", "Exam/FBNPCTearms", "~/Exam/FBNPCTearms.aspx");
         routes.MapPageRoute("StartExam", "Exam/StartExam", "~/Exam/Page.aspx");
       routes.MapPageRoute("Achiever", "Admin/Achiever", "~/Admin/Achiever.aspx");
+        routes.MapPageRoute("Country", "Admin/Country", "~/Admin/CountryMaster.aspx");
+        routes.MapPageRoute("State", "Admin/State", "~/Admin/StateMaster.aspx");
+        routes.MapPageRoute("City", "Admin/City", "~/Admin/CityMaster.aspx");
+        routes.MapPageRoute("Blogs", "Admin/Blogs", "~/Admin/Blogs.aspx");
     }
 </script>
 

@@ -64,6 +64,26 @@
                                                     </div>
                                                 </div>  
                                              </div>
+                                             <div class="row">
+                                                 <div class="col-md-4">
+                                                     <div>
+                                                         <label class="control-label">Country</label>
+                                                         <asp:DropDownList ID="ddlCountry" runat="server" CssClass="form-control" OnSelectedIndexChanged="BindStateInfo" AutoPostBack="true"></asp:DropDownList>
+                                                     </div>
+                                                 </div>
+                                                   <div class="col-md-4">
+                                                     <div>
+                                                         <label class="control-label">State</label>
+                                                         <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" OnSelectedIndexChanged="BindCityInfo" AutoPostBack="true"></asp:DropDownList>
+                                                     </div>
+                                                 </div>
+                                                   <div class="col-md-4">
+                                                     <div>
+                                                         <label class="control-label">City</label>
+                                                        <asp:DropDownList ID="ddlCity" runat="server" CssClass="form-control"></asp:DropDownList>
+                                                     </div>
+                                                 </div>
+                                                 </div>
                                             <div class="row">
                                              <div class="col-md-12">
                                                     <div>

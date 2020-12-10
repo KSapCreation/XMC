@@ -44,6 +44,7 @@ namespace MvcApplication1.Exam
                 else
                 {
                     lblMultiMsg.Text = "No Records found";
+                    sectiontype.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -66,6 +67,7 @@ namespace MvcApplication1.Exam
                 else
                 {
                     lblIndividualMsg.Text = "No Records found";
+                    sectiontype2.Visible = false;
                 }
             }
             catch (Exception ex)

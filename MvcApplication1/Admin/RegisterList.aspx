@@ -37,6 +37,16 @@
                     <asp:Button ID="btnReset" runat="server" CssClass="btn btn-circle" Text="Reset" OnClick="Reset" />
             </div>
         </div>
+         <div class="row">
+             <div class="col-sm-2">
+                 <label class="control-label">From Date</label>
+                 <asp:TextBox ID="txtdtfrom" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                 </div>
+             <div class="col-sm-2">
+                 <label class="control-label">To Date</label>
+                 <asp:TextBox ID="txtToDate" runat="server"  CssClass="form-control" TextMode="Date"></asp:TextBox>
+                 </div>
+             </div>
         <br />
         <div class="tab-pane" id="Userinfo" runat="server" visible="true">
                                 <div class="portlet box blue">
@@ -112,6 +122,11 @@
                 <asp:TemplateField HeaderText="Other Information" HeaderStyle-Width="300px">
                     <ItemTemplate>
                         <asp:Label ID="lblSpecialRequest" runat="server" Text='<%# Eval("SpecialRequest") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                 <asp:TemplateField HeaderText="Register Date">
+                    <ItemTemplate>
+                        <asp:Label ID="lblRegisterDate" runat="server" Text='<%# Eval("CreatedDate") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

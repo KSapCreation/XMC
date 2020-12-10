@@ -1,33 +1,4 @@
-/*------------------------------------------------------------------
 
-[TABLE OF CONTENTS]
-
-- GLOBAL
-- GUI
-  -- Titles
-  -- Decor
-  -- Paragrafs
-  -- Buttons
-  -- Images
-  -- List
-  -- Forms
-    -- Radio/check customisation
-  -- Tables
-  -- Tabs
-  -- Dropcap
-  -- Blockquote
-  -- Pagination
-  -- Alert
-  -- Tooltip
-  -- Progress bar
-  -- Effects
-  -- Sections
-  -- Carousel
-  -- Other
-- COMPONENTS
-- FOOTER
--------------------------------------------------------------------*/
-/* ======= GLOBAL ======= */
 body {
   font: 13px/2 'Open Sans';
   color: #666;
@@ -2033,11 +2004,16 @@ blockquote cite {
 }
 
 .b-advantages-2 .b-advantages__inner {
-  /*margin-top: 54px;*/
-  margin-right: 38px;
-  /*margin-bottom: 26px;*/
-  padding: 42px 40px 45px 50px;
-  background-color:white;
+    /*margin-top: 54px;*/
+    margin-right: 38px;
+    /*margin-bottom: 26px;*/
+    /*padding: 42px 40px 45px 30px;*/
+    padding: 15px 40px 45px 20px;
+    background-color: #e66d06;
+    border-color: white;
+    border-width: medium;
+    border-style: solid;
+    border-radius: 20px;
 }
 
 .b-advantages-2_mod-a {

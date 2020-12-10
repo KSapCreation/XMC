@@ -109,5 +109,65 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_Panels.DL_BindAchieverList(objML_Panels);
         }
+        public int BL_InsCountryInfo(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_InsCountryInfo(objML_Panels);
+        }
+        public int BL_DeleteCountry(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_DeleteCountry(objML_Panels);
+        }
+        public DataTable BL_CountryEdit(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_CountryEdit(objML_Panels);
+        }
+        public DataTable BL_CountryBind(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_CountryBind(objML_Panels);
+        }
+
+        public int BL_InsStateInfo(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_InsStateInfo(objML_Panels);
+        }
+        public int BL_DeleteState(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_DeleteState(objML_Panels);
+        }
+        public DataTable BL_StateEdit(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_StateEdit(objML_Panels);
+        }
+        public DataTable BL_StateBind(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_StateBind(objML_Panels);
+        }
+
+        public DataTable BL_StateCountryWiseBind(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_StateCountryBind(objML_Panels);
+        }
+
+        public DataTable BL_CityStateWiseBind(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_CityStateBind(objML_Panels);
+        }
+
+        public int BL_InsCityInfo(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_InsCityInfo(objML_Panels);
+        }
+        public int BL_DeleteCity(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_DeleteCity(objML_Panels);
+        }
+        public DataTable BL_CityEdit(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_CityEdit(objML_Panels);
+        }
+        public DataTable BL_CityBind(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_CityBind(objML_Panels);
+        }
     }
 }

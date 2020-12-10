@@ -39,70 +39,79 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="profile-content">
-          <div class="row">
-                <div class="col-sm-12">
-                    <h1>Section: Multiple</h1>
-                    </div>
-              </div>
-          <div class="row">
-                            <div class="col-sm-12">
-                                <asp:Panel ID="pnl" runat="server" ScrollBars="Both">
-                                <asp:DataList ID="dlExamList" runat="server" RepeatColumns="4">
-                                    <ItemTemplate>
-                                        <div class="top-news">
-                                            <asp:LinkButton ID="lnkGet" runat="server" CssClass="btn green" OnClick="GetExam">                                            
-                                              <%--  <span> <asp:Label ID="lblCount" runat="server" Text='<%#Eval("num")%>' Visible="false"></asp:Label> </span>--%>
-                                                <em>
-                                                    <asp:Label ID="Label1" runat="server" Text='<%#Eval("First_NAME")%>'></asp:Label>
-                                                </em>
-                                                <em>
-                                                    <i class="fa fa-tags"></i>
-                                                     <asp:Label ID="lblExamID" runat="server" Text='<%#Eval("ExamCode")%>' Visible="false"></asp:Label> </em>
-                                                    Exam Name <asp:Label ID="lblName" runat="server" Text='<%#Eval("ExamName")%>'></asp:Label> </em>
-                                                  <em>
-                                                    <i class="fa fa-tags"></i>
-                                                    Description <asp:Label ID="Label2" runat="server" Text='<%#Eval("Exam Description")%>'></asp:Label>   <asp:Label ID="lblIndividual" runat="server" Text='<%#Eval("DocType")%>' Visible="false"></asp:Label></em>
-                                                <i class="fa fa-graduation-cap top-news-icon"></i>
-                                            </asp:LinkButton>
-                                        </div>
-                                    </ItemTemplate>                              
-                                    </asp:DataList>
-                                    </asp:Panel>
-                                <asp:Label ID="lblMultiMsg" runat="server" ></asp:Label>
-                            </div>
-                        </div>
+        <div class="row" id="sectiontype" runat="server">
+            <div class="col-sm-12">
+                <h1>Section: Multiple</h1>
+            </div>
+        </div>
         <div class="row">
-                <div class="col-sm-12">
-                    <h1>Section: Individual</h1>
-                    </div>
-              </div>
-         <div class="row">
-                            <div class="col-sm-12">
-                                <asp:Panel ID="Panel1" runat="server" ScrollBars="Both">
-                                <asp:DataList ID="dlExamIndividual" runat="server" RepeatColumns="4">
-                                    <ItemTemplate>
-                                        <div class="top-news">
-                                            <asp:LinkButton ID="lnkGet" runat="server" CssClass="btn green" OnClick="GetExam">                                            
-                                                <em>
-                                                    <asp:Label ID="Label1" runat="server" Text='<%#Eval("First_NAME")%>'></asp:Label>
-                                                </em>
-                                                <em>
-                                                    <i class="fa fa-tags"></i>
-                                                     <asp:Label ID="lblExamID" runat="server" Text='<%#Eval("ExamCode")%>' Visible="false"></asp:Label> </em>
-                                                    Exam Name <asp:Label ID="lblName" runat="server" Text='<%#Eval("ExamName")%>'></asp:Label> </em>
+            <div class="col-sm-12">
+                <asp:Panel ID="pnl" runat="server" ScrollBars="Both">
+                    <asp:DataList ID="dlExamList" runat="server" RepeatColumns="4">
+                        <ItemTemplate>
+                            <div class="top-news">
+                                <asp:LinkButton ID="lnkGet" runat="server" CssClass="btn green" OnClick="GetExam">
+                                    <%--  <span> <asp:Label ID="lblCount" runat="server" Text='<%#Eval("num")%>' Visible="false"></asp:Label> </span>--%>
+                                    <em>
+                                        <asp:Label ID="Label1" runat="server" Text='<%#Eval("First_NAME")%>'></asp:Label>
+                                    </em>
+                                    <em>
+                                        <i class="fa fa-tags"></i>
+                                        <asp:Label ID="lblExamID" runat="server" Text='<%#Eval("ExamCode")%>' Visible="false"></asp:Label>
+                                    </em>
+                                    Exam Name
+                                    <asp:Label ID="lblName" runat="server" Text='<%#Eval("ExamName")%>'></asp:Label>
+                                    </em>
                                                   <em>
-                                                    <i class="fa fa-tags"></i>
-                                                    Description <asp:Label ID="Label2" runat="server" Text='<%#Eval("Exam Description")%>'></asp:Label>
+                                                      <i class="fa fa-tags"></i>
+                                                      Description
+                                                      <asp:Label ID="Label2" runat="server" Text='<%#Eval("Exam Description")%>'></asp:Label>
+                                                      <asp:Label ID="lblIndividual" runat="server" Text='<%#Eval("DocType")%>' Visible="false"></asp:Label></em>
+                                    <i class="fa fa-graduation-cap top-news-icon"></i>
+                                </asp:LinkButton>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </asp:Panel>
+                <asp:Label ID="lblMultiMsg" runat="server"></asp:Label>
+            </div>
+        </div>
+        <div class="row" id="sectiontype2" runat="server">
+            <div class="col-sm-12">
+                <h1>Section: Individual</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <asp:Panel ID="Panel1" runat="server" ScrollBars="Both">
+                    <asp:DataList ID="dlExamIndividual" runat="server" RepeatColumns="4">
+                        <ItemTemplate>
+                            <div class="top-news">
+                                <asp:LinkButton ID="lnkGet" runat="server" CssClass="btn green" OnClick="GetExam">
+                                    <em>
+                                        <asp:Label ID="Label1" runat="server" Text='<%#Eval("First_NAME")%>'></asp:Label>
+                                    </em>
+                                    <em>
+                                        <i class="fa fa-tags"></i>
+                                        <asp:Label ID="lblExamID" runat="server" Text='<%#Eval("ExamCode")%>' Visible="false"></asp:Label>
+                                    </em>
+                                    Exam Name
+                                    <asp:Label ID="lblName" runat="server" Text='<%#Eval("ExamName")%>'></asp:Label>
+                                    </em>
+                                                  <em>
+                                                      <i class="fa fa-tags"></i>
+                                                      Description
+                                                      <asp:Label ID="Label2" runat="server" Text='<%#Eval("Exam Description")%>'></asp:Label>
                                                       <asp:Label ID="lblIndividual" runat="server" Text='<%#Eval("DocType")%>' Visible="false"></asp:Label>
                                                   </em>
-                                                <i class="fa fa-graduation-cap top-news-icon"></i>
-                                            </asp:LinkButton>
-                                        </div>
-                                    </ItemTemplate>                              
-                                    </asp:DataList>
-                                    </asp:Panel>
-                                <asp:Label ID="lblIndividualMsg" runat="server" ></asp:Label>
+                                    <i class="fa fa-graduation-cap top-news-icon"></i>
+                                </asp:LinkButton>
                             </div>
-                        </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </asp:Panel>
+                <asp:Label ID="lblIndividualMsg" runat="server"></asp:Label>
+            </div>
         </div>
+    </div>
 </asp:Content>

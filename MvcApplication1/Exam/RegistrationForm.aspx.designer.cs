@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Exam {
-    
-    
-    public partial class RegistrationForm {
-        
+namespace MvcApplication1.Exam
+{
+
+
+    public partial class RegistrationForm
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Userinfo control.
         /// </summary>
@@ -29,7 +31,16 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Userinfo;
-        
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
         /// <summary>
         /// txtFirstName control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
-        
+
         /// <summary>
         /// txtLastName control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
-        
+
         /// <summary>
         /// txtAddress control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
-        
+
         /// <summary>
         /// txtCity control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCity;
-        
+
         /// <summary>
         /// txtState control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtState;
-        
+
         /// <summary>
         /// txtPostal control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPostal;
-        
+
         /// <summary>
         /// txtPhone control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
-        
+
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
+
         /// <summary>
         /// rbtnlist control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbtnlist;
-        
+
         /// <summary>
         /// txtExamDate control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtExamDate;
-        
+
         /// <summary>
         /// txtSpecialReq control.
         /// </summary>
@@ -128,7 +139,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSpecialReq;
-        
+
         /// <summary>
         /// btnSave control.
         /// </summary>

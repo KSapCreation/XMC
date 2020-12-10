@@ -64,6 +64,8 @@ Body Content
                     <ul class="socials">
                         <li><a href="https://www.facebook.com/yourdoorstp/" class="fb" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://ca.linkedin.com/in/taran-kaur-15196120" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCClaIbGsF13R8qvPOcFmEAA" class="YouTube" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                     <a href="#" class="nav-triger"><span class="fa fa-navicon"></span></a>
                     <ul class="main-menu">
@@ -135,7 +137,7 @@ Body Content
                 <div class="col-md-3 col-sm-4 color-white no-pad">
                     <div class="contact-box bg-blue1">
                         <h5 class="text-bold">Future Building Nursing Prep Center</h5>
-                        <p>Phone : (306) 316-0411 <br />Email : Feedback@fbnpc.com <br /> Address : Regina, SK S4W 0H6, CA</p>
+                        <p>Phone : (306) 316-0411 <br />Email : Feedback@fbnpc.com <br /> Address : 2010-11 Avenue, 7th Floor <br /> Regina, Saskatchewan <br /> S4P OJ3 </p>
                     </div>
 
                     <div class="contact-box bg-blue2">

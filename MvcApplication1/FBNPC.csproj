@@ -155,6 +155,13 @@
     <Compile Include="Admin\batches.aspx.designer.cs">
       <DependentUpon>batches.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Blogs.aspx.cs">
+      <DependentUpon>Blogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Blogs.aspx.designer.cs">
+      <DependentUpon>Blogs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,6 +176,13 @@
     <Compile Include="Admin\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CityMaster.aspx.cs">
+      <DependentUpon>CityMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CityMaster.aspx.designer.cs">
+      <DependentUpon>CityMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CommonClass.cs" />
     <Compile Include="Admin\Comprehension.aspx.cs">
       <DependentUpon>Comprehension.aspx</DependentUpon>
@@ -176,6 +190,13 @@
     </Compile>
     <Compile Include="Admin\Comprehension.aspx.designer.cs">
       <DependentUpon>Comprehension.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CountryMaster.aspx.cs">
+      <DependentUpon>CountryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CountryMaster.aspx.designer.cs">
+      <DependentUpon>CountryMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -298,6 +319,13 @@
     </Compile>
     <Compile Include="Admin\Series.aspx.designer.cs">
       <DependentUpon>Series.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StateMaster.aspx.cs">
+      <DependentUpon>StateMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StateMaster.aspx.designer.cs">
+      <DependentUpon>StateMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\StudyMaster.aspx.cs">
       <DependentUpon>StudyMaster.aspx</DependentUpon>
@@ -547,9 +575,12 @@
     <Content Include="Admin\Achiever.aspx" />
     <Content Include="Admin\AVMaster.aspx" />
     <Content Include="Admin\batches.aspx" />
+    <Content Include="Admin\Blogs.aspx" />
     <Content Include="Admin\Category.aspx" />
     <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="Admin\CityMaster.aspx" />
     <Content Include="Admin\Comprehension.aspx" />
+    <Content Include="Admin\CountryMaster.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\ExamListMaster.aspx" />
     <Content Include="Admin\ExamReloader.aspx" />
@@ -867,6 +898,7 @@
     <Content Include="Admin\RegisterList.aspx" />
     <Content Include="Admin\Section.aspx" />
     <Content Include="Admin\Series.aspx" />
+    <Content Include="Admin\StateMaster.aspx" />
     <Content Include="Admin\StudyMaster.aspx" />
     <Content Include="Admin\Subject.aspx" />
     <Content Include="Admin\TearmsCondition.aspx" />

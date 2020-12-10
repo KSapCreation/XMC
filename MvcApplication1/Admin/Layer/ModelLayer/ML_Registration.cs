@@ -23,6 +23,9 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string Address { get; set; }
         public string CreatedBy { get; set; }
         public string ModifyBy { get; set; }
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
+        public string _TYpe { get; set; }
 
     }
 }

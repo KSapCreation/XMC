@@ -59,7 +59,10 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                       new SqlParameter("@ModifyBy",objML_Panels.ModifyBy),
                                       new SqlParameter("@DocType",objML_Panels.DocType),
                                       new SqlParameter("@ID",objML_Panels.ID),
-                                      new SqlParameter("@ImageID",objML_Panels.ImageID)           
+                                      new SqlParameter("@ImageID",objML_Panels.ImageID),
+                                      new SqlParameter("@Country",objML_Panels.CountryID),
+                                      new SqlParameter("@State",objML_Panels.StateID),
+                                      new SqlParameter("@City",objML_Panels.CityID),
                                };
             return SqlHelper.ExecuteNonQuery(con, "FBNPC_Our_Programs_Insert", par);
         }
@@ -229,6 +232,109 @@ namespace MvcApplication1.Admin.Layer.Datalayer
             SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID)
                                };
             return SqlHelper.ExecuteDataset(con, "KSCN_Achiever_Bind", par).Tables[0];
+        }
+        public int DL_InsCountryInfo(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@CountryID",objML_Panels.ID),
+                                    new SqlParameter("@Name",objML_Panels.Desc)                                  
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_Country_Insert", par);
+        }
+        public int DL_DeleteCountry(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_Country_Delete", par);
+        }
+        public DataTable DL_CountryEdit(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_Country_Select", par).Tables[0];
+        }
+        public DataTable DL_CountryBind(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_Country_Bind", par).Tables[0];
+        }
+
+        public int DL_InsStateInfo(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@CountryID",objML_Panels.CountryID),
+                                    new SqlParameter("@Name",objML_Panels.Desc),
+                                    new SqlParameter("@StateID",objML_Panels.ID),
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_State_Insert", par);
+        }
+        public int DL_DeleteState(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_State_Delete", par);
+        }
+        public DataTable DL_StateEdit(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_State_Select", par).Tables[0];
+        }
+        public DataTable DL_StateBind(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_State_Bind", par).Tables[0];
+        }
+
+        public DataTable DL_StateCountryBind(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_State_Country_Wise", par).Tables[0];
+        }
+
+        public DataTable DL_CityStateBind(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_City_State_Wise", par).Tables[0];
+        }
+
+        public int DL_InsCityInfo(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@CityID",objML_Panels.ID),                                    
+                                    new SqlParameter("@CountryID",objML_Panels.CountryID),
+                                    new SqlParameter("@Name",objML_Panels.Desc),
+                                    new SqlParameter("@StateID",objML_Panels.StateID)
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_City_Insert", par);
+        }
+        public int DL_DeleteCity(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_City_Delete", par);
+        }
+        public DataTable DL_CityEdit(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_City_Select", par).Tables[0];
+        }
+        public DataTable DL_CityBind(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_City_Bind", par).Tables[0];
         }
     }
 }

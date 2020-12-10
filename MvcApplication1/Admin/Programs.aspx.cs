@@ -29,7 +29,75 @@ namespace MvcApplication1.Admin
             }
             if (!IsPostBack)
             {
-                BindProgramsInfo();               
+                BindProgramsInfo();
+                BindCountryInfo();
+            }
+        }
+
+        protected void BindStateInfo(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                objML_Panels.ID = ddlCountry.SelectedValue != "" ? ddlCountry.SelectedValue : null;
+                dt = objBL_Panels.BL_StateCountryWiseBind(objML_Panels);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlState.DataSource = dt;
+                    ddlState.DataValueField = "StateID";
+                    ddlState.DataTextField = "Name";
+                    ddlState.DataBind();
+                    ddlState.Items.Insert(0, "Select State");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + ex.Message.ToString() + "');", true);
+            }
+        }
+
+        protected void BindCityInfo(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                objML_Panels.ID = ddlState.SelectedValue != "" ? ddlState.SelectedValue : null;
+                dt = objBL_Panels.BL_CityStateWiseBind(objML_Panels);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlCity.DataSource = dt;
+                    ddlCity.DataValueField = "CityID";
+                    ddlCity.DataTextField = "Name";
+                    ddlCity.DataBind();
+                    ddlCity.Items.Insert(0, "Select City");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + ex.Message.ToString() + "');", true);
+            }
+        }
+        protected void BindCountryInfo()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = objBL_Panels.BL_CountryBind(objML_Panels);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlCountry.DataSource = dt;
+                    ddlCountry.DataValueField = "CountryID";
+                    ddlCountry.DataTextField = "Name";
+                    ddlCountry.DataBind();
+                    ddlCountry.Items.Insert(0, "Select Country");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + ex.Message.ToString() + "');", true);
             }
         }
         protected void Cancel(object sender, EventArgs e)

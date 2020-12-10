@@ -48,7 +48,7 @@
                     </div>
                     <div class="portlet-body form">
                         <!-- BEGIN FORM-->
-
+                       <h3> <asp:Label ID="lblMessage" runat="server" ForeColor="Green"></asp:Label></h3>
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-6">

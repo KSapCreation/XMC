@@ -31,6 +31,10 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string ComprehensionName { get; set; }
         public string ComprehensionDesc{get; set; }
 
+        public string CountryID { get; set; }
+        public string StateID { get; set; }
+        public string CityID { get; set; }
+
 
 
 

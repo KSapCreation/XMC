@@ -85,7 +85,13 @@ namespace MvcApplication1.Admin
             try
             {
                 DataTable dt = new DataTable();
-                objML_Registration.UserCode = txtSearch.Text != "" ? txtSearch.Text : null;
+                objML_Registration.UserCode = txtSearch.Text;
+                objML_Registration.FromDate = (txtdtfrom.Text != "" ? txtdtfrom.Text : null);
+                objML_Registration.ToDate = (txtToDate.Text != "" ? txtToDate.Text : null);
+                if (objML_Registration.FromDate == null)
+                {
+                    objML_Registration._TYpe = "not";
+                }
                 dt = objBL_Registration.BL_SearchList(objML_Registration);
                 if (dt.Rows.Count > 0)
                 {
@@ -106,6 +112,8 @@ namespace MvcApplication1.Admin
         {
             BindRegisterList();
             txtSearch.Text = "";
+            txtdtfrom.Text = Convert.ToString(DateTime.Now.AddDays(30));
+            txtToDate.Text= Convert.ToString(DateTime.Now);
         }
         protected void Delete(object sender, EventArgs e)
         {

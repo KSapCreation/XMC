@@ -41,8 +41,11 @@ namespace MvcApplication1.Admin.Layer.Datalayer
         }
         public DataTable DL_SearchList(ML_Registration objML_Registration)
         {
-            SqlParameter[] par ={new SqlParameter("@ID",objML_Registration.UserCode)
-                                                                   
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Registration.UserCode),
+                    new SqlParameter("@FromDate",objML_Registration.FromDate),
+                    new SqlParameter("@ToDate",objML_Registration.ToDate),
+                    new SqlParameter("@DocType",objML_Registration._TYpe)
+
                                };
             return SqlHelper.ExecuteDataset(con, "FBNPC_SearchList", par).Tables[0];
         }

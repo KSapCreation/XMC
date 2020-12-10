@@ -61,6 +61,8 @@ Style Sheets
                     <ul class="socials">
 <li><a href="https://www.facebook.com/yourdoorstp/" class="fb" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                           <li><a href="https://ca.linkedin.com/in/taran-kaur-15196120" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCClaIbGsF13R8qvPOcFmEAA" class="YouTube" target="_blank"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                     <a href="#" class="nav-triger"><span class="fa fa-navicon"></span></a>
                     <ul class="main-menu">
@@ -114,14 +116,14 @@ Style Sheets
                                     <h4 class="widget-title">Recent news</h4>
                                     <marquee direction="up" height="200px" scrollamount="5">
                                     <ul>
-                                        <li>
+                                        <%--<li>
                                             <a href="blog-single.html">Raising productivity &amp; morale in the warehouse</a>
                                             <span class="post-date">March 25, 2016</span>
                                         </li>
                                         <li>
                                             <a href="blog-single.html">Seafield logistics goes into administration</a>
                                             <span class="post-date">March 25, 2016</span>
-                                        </li>
+                                        </li>--%>
                                     </ul>
                                         </marquee>
                                 </div><!-- /.widget_recent_entries -->

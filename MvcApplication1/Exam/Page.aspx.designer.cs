@@ -159,6 +159,15 @@ namespace MvcApplication1.Exam
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
+        /// pnl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnl;
+
+        /// <summary>
         /// DlIndividual control.
         /// </summary>
         /// <remarks>

@@ -64,13 +64,15 @@
                                                 <li><a href="Panels#One">Sliders Content</a></li>
                                                 <li><a href="About#One">About Us</a></li>    
                                                 <li><a href="Gallery#One">Our Gallery</a></li> 
-                                                <li><a href="RegisterList">List of Registration</a></li>  
-                                                 <li><a href="Achiever">Our Achievers</a></li>
+                                                <li><a href="RegisterList">List of Registration</a></li>                                                 
                                                  <li class="has-submenu">
                                                     <a href="#">Masters</a>
                                                     <ul class="submenu">
                                                         <li><a href="Category#One">Category</a></li>
-                                                        <li><a href="Batches">Batches</a></li>                                                   
+                                                        <li><a href="Batches">Batches</a></li>   
+                                                         <li><a href="Country">Country</a></li>   
+                                                         <li><a href="State">State</a></li>   
+                                                         <li><a href="City">City</a></li>   
                                                     </ul>
                                                 </li>   
                                                   <li class="has-submenu">
@@ -100,7 +102,13 @@
                                                 <li><a href="TearmsCondition">Tearms Conditions</a></li> 
                                                 <li><a href="Updates">Updates</a></li> 
                                               </ul>
-                                        </li>                                  
+                                        </li>       
+                                            <li>
+                                            <a href="Blogs"><span><i class="ti-bookmark"></i></span><span>Our Blogs </span></a>                                            
+                                        </li>   
+                                         <li>
+                                            <a href="Achiever"><span><i class="ti-user"></i></span><span>Our Achievers </span></a>                                            
+                                        </li>   
                                          <%--    <li class="has-submenu">
                                             <a href="#"><span><i class="ti-server"></i></span><span>Preview</span></a>
                                              </li>

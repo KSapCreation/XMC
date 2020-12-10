@@ -68,6 +68,7 @@ namespace MvcApplication1.Exam
                 int x = objBL_Registration.BL_InsUpdRegistration(objML_Registration);
                 if (x == 1)
                 {
+                    lblMessage.Text = "Data Saved !";
                     objclsCommon.RegisterLayout(txtFirstName.Text + " " + txtLastName.Text);
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Thank You for Registration FBNPC.');", true);                    
                     Reset();

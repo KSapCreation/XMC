@@ -81,12 +81,12 @@
         });
 </script>
 
-<%--     <script type="text/javascript">
+  <script type="text/javascript">
            document.addEventListener("contextmenu", function (e) {
                e.preventDefault();
            }, false);
     </script>
-    --%>
+   
 <script type='text/javascript'>
     document.onkeydown = function (e) {
         var key = e.charCode || e.keyCode;
@@ -234,17 +234,19 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="ColectionPage">
+                    <div class="ColectionPage" style="height:160px;">
                         <asp:Label ID="Label2" runat="server" Visible="false" ForeColor="White" CssClass="blink"></asp:Label>
-                        <asp:DataList ID="DlIndividual" runat="server" RepeatDirection="Horizontal" RepeatLayout="Table"  CellPadding="200">
-                            <ItemTemplate>
-                                <asp:Label ID="lblID" runat="server" Text='<%#Eval("QuestionID")%>' Visible="false"></asp:Label><span style="color: white;">-</span>
-                                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="ShowIndividualQuestion" Style="border-width: 1px; border-style: Solid; border-radius: 10px; font-weight: 600; border-color: white;">
-                                    <asp:Label ID="Label1" runat="server" Text='<%#Eval("num")%>' ForeColor="White"></asp:Label>
-                                </asp:LinkButton>
+                        <asp:Panel ID="pnl" runat="server" ScrollBars="Horizontal" Height="160px" >
+                            <asp:DataList ID="DlIndividual" runat="server" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="34" CellPadding="200">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblID" runat="server" Text='<%#Eval("QuestionID")%>' Visible="false"></asp:Label>
+                                    <asp:LinkButton ID="LinkButton3" runat="server" OnClick="ShowIndividualQuestion" Style="border-color: white; margin-left: 5px; margin-right: 5px; margin-bottom: 8px;">
+                                        <asp:Label ID="Label1" runat="server" Text='<%#Eval("num")%>' ForeColor="White"></asp:Label>
+                                    </asp:LinkButton>
 
-                            </ItemTemplate>
-                        </asp:DataList>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </asp:Panel>
                     </div>
                 </div>
 
