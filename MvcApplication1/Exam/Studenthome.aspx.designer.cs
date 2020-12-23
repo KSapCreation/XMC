@@ -7,20 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Exam {
-    
-    
-    public partial class Studenthome {
-        
-        /// <summary>
-        /// Div1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
-        
+namespace MvcApplication1.Exam
+{
+
+
+    public partial class Studenthome
+    {
+
         /// <summary>
         /// dlUpdates control.
         /// </summary>
@@ -29,7 +22,16 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList dlUpdates;
-        
+
+        /// <summary>
+        /// Div1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+
         /// <summary>
         /// Userinfo control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Userinfo;
-        
+
         /// <summary>
         /// txtFirstName control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
-        
+
         /// <summary>
         /// txtLastName control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
-        
+
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
+
         /// <summary>
         /// txtPhoneNo control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNo;
-        
+
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-        
+
         /// <summary>
         /// Div2 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div2;
-        
+
         /// <summary>
         /// lblStudentID control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStudentID;
-        
+
         /// <summary>
         /// txtStudentName control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentName;
-        
+
         /// <summary>
         /// ddlExamlist control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlExamlist;
-        
+
         /// <summary>
         /// btnSubmit control.
         /// </summary>

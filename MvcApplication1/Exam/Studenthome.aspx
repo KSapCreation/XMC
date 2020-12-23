@@ -81,38 +81,17 @@
  	<!-- BEGIN PROFILE CONTENT -->
 
 					<div class="profile-content">
-                        <div id="Div1" class="row" runat="server" visible="true">
-                                   <div class="col-md-6">
-                        <div class="tab-pane">
-								<div class="portlet box blue">
-									<div class="portlet-title">
-										<div class="caption">
-											<i class="fa fa-gift"></i>Score Board
-										</div>
-									</div>
-									<div class="portlet-body form">
-										<!-- BEGIN FORM-->                          		
-											<div>
-                                               <div>                                                    
-                                                     <div id="visualization" style="height:250px;">                                                       
-                                                        </div>                                     
-                                                     
-                                               </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tab-pane">
+                                    <div class="portlet box blue">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-gift"></i>FBNPC Updates
                                             </div>
                                         </div>
-                                    </div>
-                            </div>
-                      </div>
-                                    <div class="col-md-6">
-                        <div class="tab-pane">
-								<div class="portlet box blue">
-									<div class="portlet-title">
-										<div class="caption">
-											<i class="fa fa-gift"></i>FBNPC Updates
-										</div>
-									</div>
-									<div class="portlet-body form">
-                                        <marquee direction="up" style="height:250px;padding-left: 5px;" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll">
+                                        <div class="portlet-body form">
+                                            <marquee direction="up" style="height: 150px; padding-left: 5px;" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" behavior="scroll">
                                         <asp:DataList ID="dlUpdates" runat="server" RepeatColumns="1">
                                             <ItemTemplate>
                                               
@@ -122,11 +101,55 @@
                                             </ItemTemplate>
                                         </asp:DataList>
 										</marquee>
-                                     </div>
+                                        </div>
                                     </div>
+                                </div>
                             </div>
-                      </div>
-                                   </div>
+                        </div>
+                        <div id="Div1" class="row" runat="server" visible="true">
+                            <div class="col-md-6">
+                                <div class="tab-pane">
+                                    <div class="portlet box blue">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-gift"></i>Score Board (Multiple)
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body form">
+                                            <!-- BEGIN FORM-->
+                                            <div>
+                                                <div>
+                                                    <div id="visualization" style="height: 250px;">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tab-pane">
+                                    <div class="portlet box blue">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="fa fa-gift"></i>Score Board (Individual)
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body form">
+                                            <!-- BEGIN FORM-->
+                                            <div>
+                                                <div>
+                                                    <div id="Individualvisualization" style="height: 250px;">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 						<div class="row">
 							<div class="col-md-12">
 								<!-- BEGIN PORTLET -->
@@ -267,6 +290,38 @@
             }
             new google.visualization.PieChart(document.getElementById('visualization')).
                 draw(data, { title: "Status: Listening Audio Video", is3D: true });
+            // draw(data, { title: "Status", pieHole: 0.4 }); Donut Piechart Function
+        }
+    </script>
+    <!-- Second Indidual -->
+     <script type="text/javascript">
+         google.load('Individualvisualization', '1', { packages: ['corechart'] });
+     </script>
+    <!--first chart -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                url: 'Studenthome.aspx/GetData1',
+                data: '{}',
+                success:
+                    function (response) {
+                        drawIndividual(response.d);
+                    }
+            });
+        })
+
+        function drawIndividual(dataValues) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Column Name');
+            data.addColumn('number', 'Column Value');
+            for (var i = 0; i < dataValues.length; i++) {
+                data.addRow([dataValues[i].ColumnName, dataValues[i].Value]);
+            }
+            new google.visualization.PieChart(document.getElementById('Individualvisualization')).
+                draw(data, { title: "Status: Individual", is3D: true });
             // draw(data, { title: "Status", pieHole: 0.4 }); Donut Piechart Function
         }
     </script>

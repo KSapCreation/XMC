@@ -60,19 +60,27 @@
                                                     </div>
                                                 </div>  
                                              </div>
-                                            <div class="row">                                               
-                                                <div class="col-md-4">
+                                             <div class="row">
+                                                   <div class="col-md-4">
                                                     <div>
-                                                        <label class="control-label">City</label>
-                                                       <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                        <label class="control-label">Country Name</label>
+                                                        <asp:DropDownList ID="ddlCountry" runat="server" CssClass="form-control" OnSelectedIndexChanged="BindStateInfo" AutoPostBack="true"></asp:DropDownList>
                                                     </div>
-                                                </div>  
-                                              <div class="col-md-4">
-                                                    <div>
-                                                        <label class="control-label">Country</label>
-                                                       <asp:TextBox ID="txtCountry" runat="server" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
-                                                    </div>
-                                                </div>  
+                                                </div>
+                                                 <div class="col-md-4">
+                                                     <div>
+                                                         <label class="control-label">State Name</label>
+                                                         <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" OnSelectedIndexChanged="BindCityInfo" AutoPostBack="true"></asp:DropDownList>
+                                                     </div>
+                                                 </div>
+                                                  <div class="col-md-4">
+                                                     <div>
+                                                         <label class="control-label">City Name</label>
+                                                         <asp:DropDownList ID="ddlCity" runat="server" CssClass="form-control"></asp:DropDownList>
+                                                     </div>
+                                                 </div>
+                                               </div>
+                                            <div class="row">                                     
                                                  <div class="col-md-4">
                                                     <div>
                                                         <label class="control-label">On Landing Page</label>
