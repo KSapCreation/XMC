@@ -22,7 +22,7 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string Hist_By { get; set; }
         public string HIst_Version { get; set; }
         public string PaperID { get; set; }
-
+        public string doctype { get; set; }
 
 
     }

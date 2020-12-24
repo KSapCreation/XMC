@@ -16,6 +16,6 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string ExamName { get; set; }
         public string StudentName { get; set; }
         public string PaperID { get; set; }
-
+        public string DocType { get; set; }
     }
 }

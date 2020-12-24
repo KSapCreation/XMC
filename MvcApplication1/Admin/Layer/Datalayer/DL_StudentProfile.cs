@@ -72,8 +72,9 @@ namespace MvcApplication1.Admin.Layer.Datalayer
         {
             SqlParameter[] par ={new SqlParameter("@ID",objML_StudentProfile.ID),  
                                     new SqlParameter("@StudentName",objML_StudentProfile.StudentName),
-                                    new SqlParameter("@ExamName",objML_StudentProfile.ExamName)
-                                    
+                                    new SqlParameter("@ExamName",objML_StudentProfile.ExamName),
+                                    new SqlParameter("@DocType",objML_StudentProfile.doctype)
+
                                };
             return SqlHelper.ExecuteDataset(con, "FBNPC_Student_Search_Questions", par).Tables[0];
         }
@@ -159,6 +160,13 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                     
                                };
             return SqlHelper.ExecuteDataset(con, "FBNPC_Exam_Student_Mapping_Select", par).Tables[0];
+        }
+        public DataTable DL_BindStudentScoreBoardIndividual(ML_StudentProfile objML_StudentProfile)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_StudentProfile.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "FBNPC_Student_DashboardScore_Board_Individual", par).Tables[0];
         }
     }
 }

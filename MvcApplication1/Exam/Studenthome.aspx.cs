@@ -80,7 +80,7 @@ namespace MvcApplication1.Exam
             }
         }
 
-        #region Student Dashboard Graph
+        #region Student Dashboard Graph Multiple
         public class Data
         {
             public string ColumnName = "";
@@ -116,6 +116,42 @@ namespace MvcApplication1.Exam
 
         #endregion
 
+        #region Student Dashboard Graph Individual
+        public class DataIndividual
+        {
+            public string ColumnName = "";
+            public int Value = 0;
+            public string studentName = "";
+            public DataIndividual(string columnName, int value)
+            {
+                ColumnName = columnName;
+                Value = value;
+
+            }
+        }
+        [WebMethod]
+        public static List<Data> GetDataIndividual()
+        {
+            BL_StudentProfile objBL_StudentProfile = new BL_StudentProfile();
+            ML_StudentProfile objML_StudentProfile = new ML_StudentProfile();
+
+            DataTable dt = new DataTable();
+            objML_StudentProfile.ID = HttpContext.Current.Session["User_Code"].ToString();
+            dt = objBL_StudentProfile.BL_BindStudentScoreBoardIndividual(objML_StudentProfile);
+            List<Data> dataList = new List<Data>();
+            string cat = "";
+            int val = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                cat = dr[0].ToString();
+                val = Convert.ToInt32(dr[1]);
+                dataList.Add(new Data(cat, val));
+            }
+            return dataList;
+        }
+
+        #endregion
+        
         public void BIndExamList()
         {
             try

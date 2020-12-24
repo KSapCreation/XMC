@@ -85,5 +85,9 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_StudentProfile.DL_BindExamList(objML_StudentProfile);
         }
+        public DataTable BL_BindStudentScoreBoardIndividual(ML_StudentProfile objML_StudentProfile)
+        {
+            return objDL_StudentProfile.DL_BindStudentScoreBoardIndividual(objML_StudentProfile);
+        }
     }
 }

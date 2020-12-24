@@ -420,6 +420,7 @@ namespace MvcApplication1.Exam
                     objML_ExamTransaction.ExamName = Session["ExamName"].ToString();
                     objML_ExamTransaction.StudentName = Session["UserName"].ToString();
                     objML_ExamTransaction.PaperID = lblPaperID.Text != "" ? lblPaperID.Text : null;
+                    objML_ExamTransaction.DocType = Session["ExamDocType"].ToString();
                     int x = objBL_ExamTransaction.BL_InsSubmitExam(objML_ExamTransaction);
                     if (x == 1)
                     { }

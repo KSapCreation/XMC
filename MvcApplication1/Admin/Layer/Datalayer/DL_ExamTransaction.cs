@@ -102,8 +102,9 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                     new SqlParameter("@Question",objML_ExamTransaction.Question),
                                     new SqlParameter("@ExamName",objML_ExamTransaction.ExamName),
                                     new SqlParameter("@StudentName",objML_ExamTransaction.StudentName),
-                                    new SqlParameter("@PaperID",objML_ExamTransaction.PaperID)
-                                 
+                                    new SqlParameter("@PaperID",objML_ExamTransaction.PaperID),
+                                    new SqlParameter("@DocType",objML_ExamTransaction.DocType)
+
                                };
             return SqlHelper.ExecuteNonQuery(con, "FBNPC_Submit_Exam_Insert", par);
         }

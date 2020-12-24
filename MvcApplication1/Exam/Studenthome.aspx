@@ -79,6 +79,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  	<!-- BEGIN PROFILE CONTENT -->
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
 					<div class="profile-content">
                         <div class="row">
@@ -118,11 +119,8 @@
                                         <div class="portlet-body form">
                                             <!-- BEGIN FORM-->
                                             <div>
-                                                <div>
                                                     <div id="visualization" style="height: 250px;">
-                                                    </div>
-
-                                                </div>
+                                                    </div>                                                
                                             </div>
                                         </div>
                                     </div>
@@ -138,12 +136,11 @@
                                         </div>
                                         <div class="portlet-body form">
                                             <!-- BEGIN FORM-->
-                                            <div>
-                                                <div>
-                                                    <div id="Individualvisualization" style="height: 250px;">
-                                                    </div>
-
-                                                </div>
+                                            <div>                                                
+                                                    
+                                                            <div id="Individualvisualization" style="height: 250px;">
+                                                            </div>
+                                                                                              
                                             </div>
                                         </div>
                                     </div>
@@ -295,16 +292,16 @@
     </script>
     <!-- Second Indidual -->
      <script type="text/javascript">
-         google.load('Individualvisualization', '1', { packages: ['corechart'] });
+         google.load('Individualvisualization', '2', { packages: ['corechart'] });
      </script>
-    <!--first chart -->
+    <!--Second chart -->
     <script type="text/javascript">
         $(document).ready(function () {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
                 contentType: 'application/json',
-                url: 'Studenthome.aspx/GetData1',
+                url: 'Studenthome.aspx/GetDataIndividual',
                 data: '{}',
                 success:
                     function (response) {
@@ -314,15 +311,15 @@
         })
 
         function drawIndividual(dataValues) {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Column Name');
-            data.addColumn('number', 'Column Value');
+            var dataIndividual = new google.visualization.DataTable();
+            dataIndividual.addColumn('string', 'Column Name');
+            dataIndividual.addColumn('number', 'Column Value');
             for (var i = 0; i < dataValues.length; i++) {
-                data.addRow([dataValues[i].ColumnName, dataValues[i].Value]);
+                dataIndividual.addRow([dataValues[i].ColumnName, dataValues[i].Value]);
             }
             new google.visualization.PieChart(document.getElementById('Individualvisualization')).
-                draw(data, { title: "Status: Individual", is3D: true });
-            // draw(data, { title: "Status", pieHole: 0.4 }); Donut Piechart Function
+                //draw(data, { title: "Status: Individual", is3D: true });
+                draw(dataIndividual, { title: "StatusStatus: Individual", pieHole: 0.4 }); //Donut Piechart Function
         }
     </script>
 </asp:Content>

@@ -27,7 +27,7 @@ namespace MvcApplication1.Exam
             if (!IsPostBack)
             {
                 BindProgramsInfo();
-                //BindExamList();
+                BindExamList();
             }
         }
         private void BindExamList()
@@ -41,7 +41,7 @@ namespace MvcApplication1.Exam
                 ddlExamName.DataTextField = "ExamName";
                 ddlExamName.DataValueField = "ExamCode";
                 ddlExamName.DataBind();
-                ddlExamName.Items.Insert(0, "");
+                ddlExamName.Items.Insert(0, "Select Exam");
             }
 
         }
@@ -108,10 +108,27 @@ namespace MvcApplication1.Exam
         {
             try
             {
+                if (ddlExamName.SelectedValue == "Select Exam")
+                {
+                    throw new Exception("Select Exam Name");
+                }
                 DataTable dt = new DataTable();
                 objML_StudentProfile.StudentName = Session["UserName"].ToString();
                 objML_StudentProfile.ID = txtSearch.Text != "" ? txtSearch.Text : null;
-                objML_StudentProfile.ExamName = ddlExamName.SelectedItem.Value != "" ? ddlExamName.SelectedItem.Value : null;
+                if (objML_StudentProfile.ID==null)
+                {
+                    objML_StudentProfile.ID = "";
+                }
+                    objML_StudentProfile.ExamName = ddlExamName.SelectedItem.Value != "" ? ddlExamName.SelectedItem.Value : null;
+                
+                if (rbtnMultiple.Checked==true)
+                {
+                    objML_StudentProfile.doctype = rbtnMultiple.Text;
+                }
+                else
+                {
+                    objML_StudentProfile.doctype = rbtnIndividual.Text;
+                }                
                 dt = objBL_StudentProfile.BL_SerachQuestionInfo(objML_StudentProfile);
                 if (dt.Rows.Count > 0)
                 {                    
@@ -138,10 +155,12 @@ namespace MvcApplication1.Exam
                     lblCorrect.Text = i.ToString();
                     lblWrong.Text = y.ToString();
                     lblTotalQus.Text = dt.Rows.Count.ToString();
-
+                    GrdCategory.Visible = true;
                 }
                 else
                 {
+                    GrdCategory.DataSource = dt;
+                    GrdCategory.Visible = false;
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "message", "alert('No Data Found')", true);
                 }
 

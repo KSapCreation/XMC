@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Exam {
-    
-    
-    public partial class Result {
-        
+namespace MvcApplication1.Exam
+{
+
+
+    public partial class Result
+    {
+
         /// <summary>
         /// ddlExamName control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlExamName;
-        
+
         /// <summary>
         /// txtSearch control.
         /// </summary>
@@ -29,7 +31,25 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
-        
+
+        /// <summary>
+        /// rbtnMultiple control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnMultiple;
+
+        /// <summary>
+        /// rbtnIndividual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnIndividual;
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -38,7 +58,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
         /// <summary>
         /// btnReset control.
         /// </summary>
@@ -47,7 +67,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnReset;
-        
+
         /// <summary>
         /// lblTotalQus control.
         /// </summary>
@@ -56,7 +76,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalQus;
-        
+
         /// <summary>
         /// lblCorrect control.
         /// </summary>
@@ -65,7 +85,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCorrect;
-        
+
         /// <summary>
         /// lblWrong control.
         /// </summary>
@@ -74,7 +94,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblWrong;
-        
+
         /// <summary>
         /// Userinfo control.
         /// </summary>
@@ -83,7 +103,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Userinfo;
-        
+
         /// <summary>
         /// pnl control.
         /// </summary>
@@ -92,7 +112,7 @@ namespace MvcApplication1.Exam {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnl;
-        
+
         /// <summary>
         /// GrdCategory control.
         /// </summary>
