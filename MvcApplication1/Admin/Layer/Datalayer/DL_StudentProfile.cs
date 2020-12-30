@@ -156,10 +156,10 @@ namespace MvcApplication1.Admin.Layer.Datalayer
         }
         public DataTable DL_BindExamList(ML_StudentProfile objML_StudentProfile)
         {
-            SqlParameter[] par ={new SqlParameter("@ID",objML_StudentProfile.ID),                                   
-                                    
+            SqlParameter[] par ={new SqlParameter("@ID",objML_StudentProfile.ID),
+                new SqlParameter("@doctype",objML_StudentProfile.doctype),
                                };
-            return SqlHelper.ExecuteDataset(con, "FBNPC_Exam_Student_Mapping_Select", par).Tables[0];
+            return SqlHelper.ExecuteDataset(con, "FBNPC_Exam_Bind_For_Result", par).Tables[0];
         }
         public DataTable DL_BindStudentScoreBoardIndividual(ML_StudentProfile objML_StudentProfile)
         {

@@ -292,13 +292,14 @@
                         <asp:Label ID="lblAllID" runat="server" Visible="false"></asp:Label>
                         <asp:Label ID="lblPaperID" runat="server" Visible="false"></asp:Label>
                         <asp:Panel ID="pnQuestion" runat="server" ScrollBars="Auto">
+                           <h3> Question No: <b><asp:Label ID="lblQusNo" runat="server"></asp:Label></b></h3>
                             <asp:DataList ID="ddlExamQuestion" runat="server" RepeatDirection="Horizontal" RepeatColumns="1" Width="100%" Height="400">
                                 <ItemTemplate>
                                     <div class="portlet-title" style="border: 1px solid #4ca5e8;">
                                         <p style="margin: 10px 15px 10px 20px;">
                                             <asp:Label ID="lblQuestionID" runat="server" Text='<%#Eval("QuestionID")%>' Visible="false"></asp:Label>
                                             <span><b>
-                                                <asp:Label ID="lblCount" runat="server" Text='<%#Eval("num")%>'></asp:Label>)</b></span>
+                                                <asp:Label ID="lblCount" runat="server" Text='<%#Eval("num")%>' Visible="false"></asp:Label></b></span>
                                             <asp:Label ID="lblQuestion" runat="server" Text='<%#Eval("Question")%>'></asp:Label>
                                         </p>
 
@@ -335,6 +336,7 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:DataList>
+                            
                         </asp:Panel>
                     </div>
 
@@ -356,7 +358,9 @@
             </div>
 
             <div class="row" id="SaveDiv" runat="server" visible="false">
-                <div class="form-actions" style="margin-left: 45%;">
+                <div class="form-actions" style="margin-left: 35%;">
+                    <asp:Button ID="btnPre" runat="server" Text="Previous" CssClass="btn green " OnClick="TempPrevious" />
+                    <asp:Button ID="btnNext" runat="server" Text="Next" CssClass="btn yellow-casablanca" OnClick="TempSaveExam" />
                     <asp:Button ID="btnSave" runat="server" Text="Submit" CssClass="btn blue" OnClick="SubmitExam" />
                     <asp:Button ID="btnLogOff" runat="server" Text="Log Off" CssClass="btn btn-danger" OnClick="LogOff" />
                 </div>

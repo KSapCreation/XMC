@@ -19,11 +19,12 @@ namespace MvcApplication1
             if (!IsPostBack)
             {
                 BindMenu();
+                BindAchiever();
             }
         }
         protected void BindMenu()
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable();            
             dt = objBL_SiteDetail.BL_DLMenu(objML_SiteDetail);
             if (dt.Rows.Count > 0)
             {
@@ -44,6 +45,22 @@ namespace MvcApplication1
                     Response.Redirect("Detail.aspx?ID=" + lblID.Text, true);
                 }
             }
+        }
+        protected void BindAchiever()
+        {
+            DataTable dt = new DataTable();
+            objML_SiteDetail.ID = "Achiever";
+            dt = objBL_SiteDetail.BL_BindAchieverList(objML_SiteDetail);
+            if (dt.Rows.Count > 0)
+            {
+                dlAchieverPicture.DataSource = dt;
+                dlAchieverPicture.DataBind();
+            }
+            else
+            {
+                //lblVideo.Text = "No Records Found";
+            }
+
         }
     }
    

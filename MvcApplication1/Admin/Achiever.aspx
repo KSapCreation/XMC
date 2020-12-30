@@ -18,7 +18,7 @@
         <link href="FBNPC/css/style.css" rel="stylesheet">
     <title>:: FBNPC Our Programs ::</title>
     <script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>
-     <script type="text/javascript" language="javascript">
+<%-- <script type="text/javascript" language="javascript">
          tinyMCE.init({
              // General options
              mode: "textareas",
@@ -26,7 +26,7 @@
              plugins: "pagebreak,style,layer,table,save,advhr,advlink,emotions,iespell",
 
          });
-     </script>
+     </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -47,19 +47,30 @@
                                         <div class="form-body">
                                                             <asp:Label ID="lblID" runat="server" Visible="false"></asp:Label>                                                                     
                                          <div class="row">                                               
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div>
                                                         <label class="control-label">First Name</label>
                                                        <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                                     </div>
                                                 </div>  
-                                              <div class="col-md-6">
+                                              <div class="col-md-4">
                                                     <div>
                                                         <label class="control-label">Last Name</label>
                                                        <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                                     </div>
                                                 </div>  
+                                             <div class="col-md-4">
+                                                    <div>
+                                                        <label class="control-label">Doc Type</label>
+                                                       <asp:DropDownList ID="ddlType" runat="server" CssClass="form-control" AutoCompleteType="Disabled">
+                                                           <asp:ListItem Value="Achiever" Text="Achiever"></asp:ListItem>
+                                                           <asp:ListItem Value="Team" Text="Team"></asp:ListItem>
+                                                       </asp:DropDownList>
+                                                    </div>
+                                                </div>  
                                              </div>
+                                             
+                                            
                                              <div class="row">
                                                    <div class="col-md-4">
                                                     <div>
@@ -124,8 +135,8 @@
                                             </div>
                                         </div>
                                         <div class="form-actions right">
-                                            <asp:Button ID="btnCancel" runat="server" CssClass="btn default" Text="Cancel"  />
-                                            <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn blue"  />
+                                            <asp:Button ID="btnCancel" runat="server" CssClass="btn default" Text="Cancel" />
+                                            <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn blue" OnClick="Save"  />
 
                                         </div>
                                     </div>
@@ -137,7 +148,7 @@
                             <Columns>
                                 <asp:TemplateField Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblProgramsID" runat="server" Text='<%# Eval("ProgramsID") %>' Visible="false"></asp:Label>
+                                        <asp:Label ID="lblProgramsID" runat="server" Text='<%# Eval("AchieverID") %>' Visible="false"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                  <asp:TemplateField Visible="true" HeaderText="Action">
@@ -146,21 +157,32 @@
                                         <asp:LinkButton ID="imgDelete" runat="server" OnClientClick="return confirm('Are you sure you want to delete this record?');" OnClick="Delete"> <img src="FBNPC/images/delete.png" width="20px" alt="" /></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Title Name">
+                                <asp:TemplateField HeaderText="First Name">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblTitleName" runat="server" Text='<%# Eval("TitleName") %>' ></asp:Label>
+                                        <asp:Label ID="lblTitleName" runat="server" Text='<%# Eval("firstName") %>' ></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                 <asp:TemplateField HeaderText="Active">
+                                <asp:TemplateField HeaderText="Last Name">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Active") %>' ></asp:Label>
+                                        <asp:Label ID="lblLastName" runat="server" Text='<%# Eval("LastName") %>' ></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                 <asp:TemplateField HeaderText="Type">
+                                <asp:TemplateField HeaderText="Description">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblType" runat="server" Text='<%# Eval("Typed") %>' ></asp:Label>
+                                        <asp:Label ID="lbldesc" runat="server" Text='<%# Eval("Description") %>' ></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Doc type">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblDocType" runat="server" Text='<%# Eval("DocType") %>' ></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField> 
+                                <asp:TemplateField HeaderText="Active">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("IsActive") %>' ></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                 
                                 <asp:TemplateField HeaderText="Update By">
                                     <ItemTemplate>
                                         <asp:Label ID="lblModifyBy" runat="server" Text='<%# Eval("ModifyBy") %>' ></asp:Label>

@@ -34,7 +34,9 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string CountryID { get; set; }
         public string StateID { get; set; }
         public string CityID { get; set; }
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int OnLandingPage { get; set; }
 
 
 

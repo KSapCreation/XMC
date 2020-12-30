@@ -258,6 +258,15 @@ namespace MvcApplication1.Exam
         protected global::System.Web.UI.WebControls.Panel pnQuestion;
 
         /// <summary>
+        /// lblQusNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQusNo;
+
+        /// <summary>
         /// ddlExamQuestion control.
         /// </summary>
         /// <remarks>
@@ -301,6 +310,24 @@ namespace MvcApplication1.Exam
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl SaveDiv;
+
+        /// <summary>
+        /// btnPre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPre;
+
+        /// <summary>
+        /// btnNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNext;
 
         /// <summary>
         /// btnSave control.

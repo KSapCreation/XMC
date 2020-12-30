@@ -59,5 +59,9 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return ObjDL_SiteDetail.DL_AboutCategory(objML_SiteDetail);
         }
+        public DataTable BL_BindAchieverList(ML_SiteDetail objML_SiteDetail)
+        {
+            return ObjDL_SiteDetail.DL_BindAchieverList(objML_SiteDetail);
+        }
     }
 }

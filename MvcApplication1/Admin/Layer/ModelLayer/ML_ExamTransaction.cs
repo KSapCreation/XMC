@@ -17,5 +17,6 @@ namespace MvcApplication1.Admin.Layer.ModelLayer
         public string StudentName { get; set; }
         public string PaperID { get; set; }
         public string DocType { get; set; }
+        public string QusNo { get; set; }
     }
 }

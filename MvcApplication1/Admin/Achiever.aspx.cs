@@ -11,6 +11,7 @@ using FBNPC;
 using System.Data.SqlClient;
 using System.IO;
 using System.Data;
+using FBNPC.layers.DataLayers;
 
 namespace MvcApplication1.Admin
 {
@@ -20,6 +21,7 @@ namespace MvcApplication1.Admin
         ML_Panels objML_Panels = new ML_Panels();
         clsCommon objCommon = new clsCommon();
         bool checkimage = false;
+        SqlConnection con = new SqlConnection(DL_Connection.GetConnection);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserName"] == null)
@@ -132,11 +134,11 @@ namespace MvcApplication1.Admin
                 Label lblID = (Label)gvr.FindControl("lblProgramsID");
                 DataTable dt = new DataTable();
                 objML_Panels.ID = lblID.Text != "" ? lblID.Text : null;
-                int x = objBL_Panels.BL_DeleteOtherInfo(objML_Panels);
+                int x = objBL_Panels.BL_DeleteAchieverInfo(objML_Panels);
                 if (x == 1)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "message", "alert('Data Delete')", true);
                     BindAchieverList();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "message", "alert('Data Delete')", true);                    
                 }
             }
         }
@@ -153,13 +155,14 @@ namespace MvcApplication1.Admin
                     DataTable dt = new DataTable();
                     int lblOnLandingPage;
                     objML_Panels.ID = lblProgramsID.Text != "" ? lblProgramsID.Text : null;
-                    dt = objBL_Panels.BL_UpdateInfo(objML_Panels);
+                    dt = objBL_Panels.BL_UpdateAchieverInfo(objML_Panels);
                     if (dt.Rows.Count > 0)
                     {                      
                         txtFirstName.Text = dt.Rows[0]["FirstName"].ToString();
                         txtLastName.Text = dt.Rows[0]["LastName"].ToString();
                         ddlCity.SelectedValue = dt.Rows[0]["City"].ToString();
                         ddlCountry.SelectedValue = dt.Rows[0]["Country"].ToString();
+                        ddlState.SelectedValue = dt.Rows[0]["State"].ToString();
                         lblOnLandingPage = int.Parse(dt.Rows[0]["OnlandingPage"].ToString());
                         if (lblOnLandingPage == 1)
                         {
@@ -182,7 +185,7 @@ namespace MvcApplication1.Admin
                         }
                         btnSave.Text = "Update";
                         chkImageEdit.Visible = true;
-                        imgEditFile.ImageUrl = "~/Handler1.ashx?TestimonialID=" + lblProgramsID.Text;
+                        imgEditFile.ImageUrl = "~/Handler1.ashx?AchieverID=" + lblProgramsID.Text;
 
                         if (chkImageEdit.Checked == false)
                         {
@@ -210,6 +213,297 @@ namespace MvcApplication1.Admin
             else
             {
                 fileImage.Enabled = false;
+            }
+        }
+        protected void Save(object sender, EventArgs e)
+        {
+            try
+            {               
+                if (txtFirstName.Text == "")
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Fill the Name.');", true);
+                }
+                else if (ddlCity.SelectedValue == "Select City")
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Select City.');", true);
+                }
+                else if (btnSave.Text == "Save")
+                {
+                    con.Open();
+                    SqlTransaction trans = con.BeginTransaction(IsolationLevel.ReadCommitted);
+                    string qry = "";
+                    qry = "select max(AchieverID) as AchieverID from KSCN_Achiever_Master";
+                    SqlCommand cmd = new SqlCommand(qry, con);
+                    cmd.Transaction = trans;
+                    cmd.Clone();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        objML_Panels.ID = dr["AchieverID"].ToString();
+                    }
+                    if (clsCommon.myLen(objML_Panels.ID) <= 0)
+                    {
+                        objML_Panels.ID = "Achiev000001";
+                    }
+                    else
+                    {
+                        objML_Panels.ID = clsCommon.incval(objML_Panels.ID);
+                    }
+                    con.Close();
+
+                    objML_Panels.FirstName = txtFirstName.Text != "" ? txtFirstName.Text : null;
+                    objML_Panels.LastName = txtLastName.Text != "" ? txtLastName.Text : null;
+                    if (chkLandingPage.Checked == true)
+                    {
+                        objML_Panels.OnLandingPage = 1;
+                    }
+                    else
+                    {
+                        objML_Panels.OnLandingPage = 0;
+                    }
+
+                    objML_Panels.Desc = txtDesc.Text != "" ? txtDesc.Text : null;
+                    objML_Panels.CityID = ddlCity.SelectedValue != "" ? ddlCity.SelectedValue : null;
+                    objML_Panels.CountryID = ddlCountry.SelectedValue != "" ? ddlCountry.SelectedValue : null;
+
+                    if (chkVisible.Checked == true)
+                    {
+                        objML_Panels.ISActive = "1";
+                    }
+                    else
+                    {
+                        objML_Panels.ISActive = "0";
+                    }
+
+
+                    //Image Uploader
+                    if (fileImage.FileName == "")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "message", "alert('Select file Image')", true);
+                        }
+                        string filePath = fileImage.PostedFile.FileName;
+                        string fileName = Path.GetFileName(filePath);
+                        string getPath = string.Empty;
+                        string pathToStore = string.Empty;
+                        string finalPathToStore = string.Empty;
+                        string Type = string.Empty;
+                        string ext = Path.GetExtension(fileName);
+
+                        {
+                            switch (ext)
+                            {
+                                case ".doc":
+                                    Type = "application/vnd.ms-word";
+                                    break;
+                                case ".docx":
+                                    Type = "application/vnd.ms-word";
+                                    break;
+                                case ".xls":
+                                    Type = "application/vnd.ms-excel";
+                                    break;
+                                case ".xlsx":
+                                    Type = "application/vnd.ms-excel";
+                                    break;
+                                case ".jpg":
+                                    Type = "image/jpg";
+                                    break;
+                                case ".png":
+                                    Type = "image/png";
+                                    break;
+                                case ".gif":
+                                    Type = "image/gif";
+                                    break;
+                                case ".pdf":
+                                    Type = "application/pdf";
+                                    break;
+                                case ".zip":
+                                    Type = "application/zip";
+                                    break;
+                                case ".rar":
+                                    Type = "application/rar";
+                                    break;
+                            }
+                            if (ext != string.Empty)
+                            {
+
+                                Stream fs = fileImage.PostedFile.InputStream;
+                                BinaryReader br = new BinaryReader(fs);
+                                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+                                objML_Panels.PicData = bytes;
+                                objML_Panels.PicName = Path.GetFileName(filePath);
+                                objML_Panels.PicType = Type;
+                            }
+                        }
+                    objML_Panels.ModifyBy = Session["UserName"].ToString();
+                    objML_Panels.CreatedBy = Session["UserName"].ToString();
+
+                    objML_Panels.ImageID = "0";
+
+                    objML_Panels.StateID = ddlState.SelectedValue != "" ? ddlState.SelectedValue : null;
+                    objML_Panels.DocType = ddlType.SelectedValue != "" ? ddlType.SelectedValue : null;
+                    ValidateFileSize();
+                        if (checkimage == true)
+                        {
+                            throw new System.ArgumentException("Size not correct", "original");
+                        }
+                        int x = objBL_Panels.BL_InsAchieverInfo(objML_Panels);
+                    if (x == 1)
+                    {
+                        Reset();
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Data Saved');", true);
+
+                    }
+                    
+                }
+                else
+                {
+                    objML_Panels.ID = lblID.Text != "" ? lblID.Text : null;
+                    objML_Panels.FirstName = txtFirstName.Text != "" ? txtFirstName.Text : null;
+                    objML_Panels.LastName = txtLastName.Text != "" ? txtLastName.Text : null;
+
+                    
+                    objML_Panels.CityID = ddlCity.SelectedValue != "" ? ddlCity.SelectedValue : null;
+                    objML_Panels.CountryID = ddlCountry.SelectedValue != "" ? ddlCountry.SelectedValue : null;
+                    if (chkLandingPage.Checked == true)
+                    {
+                        objML_Panels.OnLandingPage = 1;
+                    }
+                    else
+                    {
+                        objML_Panels.OnLandingPage = 0;
+                    }
+                    objML_Panels.Desc = txtDesc.Text != "" ? txtDesc.Text : null;
+                    if (chkVisible.Checked == true)
+                    {
+                        objML_Panels.ISActive = "1";
+                    }
+                    else
+                    {
+                        objML_Panels.ISActive = "0";
+                    }
+                    
+                    
+
+                    if (chkImageEdit.Checked == true)
+                    {
+                        objML_Panels.ImageID = "1";
+                    }
+                    else
+                    {
+                        objML_Panels.ImageID = "0";
+                    }
+                    objML_Panels.StateID = ddlState.SelectedValue != "" ? ddlState.SelectedValue : null;
+                    //Image Uploader
+                    if (chkImageEdit.Checked == true)
+                        {
+                            ValidateFileSize();
+                        if (fileImage.FileName == "")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "message", "alert('Select file Image')", true);
+                        }
+                        string filePath = fileImage.PostedFile.FileName;
+                        string fileName = Path.GetFileName(filePath);
+                        string getPath = string.Empty;
+                        string pathToStore = string.Empty;
+                        string finalPathToStore = string.Empty;
+                        string Type = string.Empty;
+                        string ext = Path.GetExtension(fileName);
+
+                        {
+                            switch (ext)
+                            {
+                                case ".doc":
+                                    Type = "application/vnd.ms-word";
+                                    break;
+                                case ".docx":
+                                    Type = "application/vnd.ms-word";
+                                    break;
+                                case ".xls":
+                                    Type = "application/vnd.ms-excel";
+                                    break;
+                                case ".xlsx":
+                                    Type = "application/vnd.ms-excel";
+                                    break;
+                                case ".jpg":
+                                    Type = "image/jpg";
+                                    break;
+                                case ".png":
+                                    Type = "image/png";
+                                    break;
+                                case ".gif":
+                                    Type = "image/gif";
+                                    break;
+                                case ".pdf":
+                                    Type = "application/pdf";
+                                    break;
+                                case ".zip":
+                                    Type = "application/zip";
+                                    break;
+                                case ".rar":
+                                    Type = "application/rar";
+                                    break;
+                            }
+                            if (ext != string.Empty)
+                            {
+
+                                Stream fs = fileImage.PostedFile.InputStream;
+                                BinaryReader br = new BinaryReader(fs);
+                                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+                                objML_Panels.PicData = bytes;
+                                objML_Panels.PicName = Path.GetFileName(filePath);
+                                objML_Panels.PicType = Type;
+                            }
+                        }
+                    }
+                        if (checkimage == true)
+                        {
+                            throw new System.ArgumentException("Size not correct", "original");
+                        }
+                    objML_Panels.CreatedBy = Session["UserName"].ToString();
+                    objML_Panels.ModifyBy = Session["UserName"].ToString();
+
+                    int x = objBL_Panels.BL_InsAchieverInfo(objML_Panels);
+                    if (x == 1)
+                    {
+                        Reset();
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Data Saved');", true);
+                    }
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + ex.Message.ToString() + "');", true);
+            }
+        }
+
+        protected void Reset()
+        {
+            txtDesc.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            chkVisible.Checked = false;
+            chkLandingPage.Checked = false;
+            chkImageEdit.Checked = false;
+
+        }
+        protected void ValidateFileSize()
+        {
+            System.Drawing.Image img = System.Drawing.Image.FromStream(fileImage.PostedFile.InputStream);
+            int height = img.Height;
+            int width = img.Width;
+            decimal size = Math.Round(((decimal)fileImage.PostedFile.ContentLength / (decimal)1024), 2);
+            if (size > 400)
+            {
+                lblPictureMsg.Text = "File size must not exceed 400 KB.";
+                checkimage = true;
+            }
+            if (height > 300 || width > 200)
+            {
+                lblPictureMsg.Text = "Please Height 300px and Width 200px.";
+                checkimage = true;
             }
         }
     }

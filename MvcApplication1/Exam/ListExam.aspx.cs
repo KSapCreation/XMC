@@ -40,11 +40,13 @@ namespace MvcApplication1.Exam
                 {
                     dlExamList.DataSource = dt;
                     dlExamList.DataBind();
+                    pnl.Visible = true;
                 }
                 else
                 {
                     lblMultiMsg.Text = "No Records found";
                     sectiontype.Visible = false;
+                    pnl.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -63,11 +65,13 @@ namespace MvcApplication1.Exam
                 {
                     dlExamIndividual.DataSource = dt;
                     dlExamIndividual.DataBind();
+                    Panel1.Visible = true;
                 }
                 else
                 {
                     lblIndividualMsg.Text = "No Records found";
                     sectiontype2.Visible = false;
+                    Panel1.Visible = false;
                 }
             }
             catch (Exception ex)

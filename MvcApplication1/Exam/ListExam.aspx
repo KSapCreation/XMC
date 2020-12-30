@@ -73,7 +73,7 @@
                         </ItemTemplate>
                     </asp:DataList>
                 </asp:Panel>
-                <asp:Label ID="lblMultiMsg" runat="server"></asp:Label>
+                <asp:Label ID="lblMultiMsg" runat="server" Visible="false"></asp:Label>
             </div>
         </div>
         <div class="row" id="sectiontype2" runat="server">

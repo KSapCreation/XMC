@@ -21,7 +21,7 @@ Style Sheets
 <link rel="stylesheet" type="text/css" href="assets/css/jquery.flickr.css">
 <link rel="stylesheet" type="text/css" href="assets/css/prettyPhoto.css">
 <link rel="stylesheet" href="assets/css/main.css">
-
+    <link href="assets/css/Gallery.css" rel="stylesheet" />
 <script src="assets/js/lib/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="assets/demo-data/Logo_fbnpc_new.png">
      <script type="text/javascript" language="javascript">
@@ -122,7 +122,27 @@ Style Sheets
         <section class="clearfix bg-white our-doctors animatedParent">
             <div class="container">
                 <h3 class="text-bold text-center text-uppercase after-mid-l pb-25">OUR ACHEIVERS</h3>   
-                <div class="row color-white">
+               
+                <asp:DataList ID="dlAchieverPicture" runat="server" RepeatColumns="3" RepeatDirection="Horizontal">
+                <ItemTemplate>                  
+                    <div class="col-sm-12">
+                    <div class="col-sm-4 mt-50 no-pad doctor animated fadeInLeft go">
+                        <figure>   <img class="img-responsive" src='<%# "Handler1.ashx?AchieverID="+ Eval("AchieverID") %>' alt="" /></figure>
+                    </div>
+                    <div class="col-sm-8 mt-50 no-pad doctor style1 bg-blue1 animated fadeInLeft go" style="min-height:300px;">
+                        <div class="info">
+                        <h6 class="text-bold text-uppercase after-left-s pb-20"><asp:Label ID="Label1" runat="server" Text='<%# Eval("FirstName") %>'></asp:Label>&nbsp;<asp:Label ID="Label2" runat="server" Text='<%# Eval("LastName") %>'></asp:Label></h2></h6>
+                       <p style="color:white;"><asp:Label ID="lblDesc" runat="server" Text='<%# Eval("Description") %>'></asp:Label></h2></p>
+                            <p style="color:white;"><asp:Label ID="lblCity" runat="server" Text='<%# Eval("CityName") %>'></asp:Label></h2></p>
+                            <p style="color:white;"><asp:Label ID="lblCountry" runat="server" Text='<%# Eval("CountryName") %>'></asp:Label></h2></p>
+                        </div>
+                    </div>                    
+                    </div>
+
+                </ItemTemplate>
+            </asp:DataList>
+                
+                <%--<div class="row color-white">
                     
                     <div class="col-sm-3 mt-50 no-pad doctor style1 bg-blue1 animated fadeInLeft go">
                         <figure><img src="assets/demo-data/demo/1.png" alt="" /></figure>
@@ -185,7 +205,7 @@ Style Sheets
                         </div>
                         <figure><img src="assets/demo-data/demo/1.png" alt="/"></figure>
                     </div>
-                </div>
+                </div>--%>
             </div>
                  
         </section>

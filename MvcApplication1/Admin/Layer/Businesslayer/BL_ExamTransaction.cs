@@ -83,5 +83,25 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_ExamTransaction.DL_CurrentDateTime(objML_ExamTransaction);
         }
+        public int BL_InsTempSaveExam(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_InsTempSaveExam(objML_ExamTransaction);
+        }
+        public DataTable BL_TempIndividualPrevious(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_TempIndividualPrevious(objML_ExamTransaction);
+        }
+        public DataTable BL_TempIndividualNext(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_TempIndividualNext(objML_ExamTransaction);
+        }
+        public DataTable BL_ShowTempQuestionList(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_ShowTempQuestionList(objML_ExamTransaction);
+        }
+        public int BL_DelTempTableExamStudent(ML_ExamTransaction objML_ExamTransaction)
+        {
+            return objDL_ExamTransaction.DL_DelTempExamStudent(objML_ExamTransaction);
+        }
     }
 }

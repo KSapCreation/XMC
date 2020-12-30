@@ -169,5 +169,17 @@ namespace MvcApplication1.Admin.Layer.Businesslayer
         {
             return objDL_Panels.DL_CityBind(objML_Panels);
         }
+        public int BL_InsAchieverInfo(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_InsAchieverInfo(objML_Panels);
+        }
+        public DataTable BL_UpdateAchieverInfo(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_UpdateAchieverInfo(objML_Panels);
+        }
+        public int BL_DeleteAchieverInfo(ML_Panels objML_Panels)
+        {
+            return objDL_Panels.DL_DeleteAchieverInfo(objML_Panels);
+        }
     }
 }

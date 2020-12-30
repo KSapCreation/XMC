@@ -336,5 +336,41 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                };
             return SqlHelper.ExecuteDataset(con, "KSCN_City_Bind", par).Tables[0];
         }
+        public int DL_InsAchieverInfo(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@AchieverID",objML_Panels.ID),
+                                    new SqlParameter("@FirstName",objML_Panels.FirstName),
+                                    new SqlParameter("@LastName",objML_Panels.LastName),
+                                    new SqlParameter("@City",objML_Panels.CityID),
+                                    new SqlParameter("@Country",objML_Panels.CountryID),
+                                    new SqlParameter("@OnLandingPage",objML_Panels.OnLandingPage),
+                                    new SqlParameter("@Desc",objML_Panels.Desc),
+                new SqlParameter("@ISActive",objML_Panels.ISActive),
+                new SqlParameter("@FileName",objML_Panels.PicName),                                      
+                new SqlParameter("@FileType",objML_Panels.PicType),
+                                      new SqlParameter("@FileData",objML_Panels.PicData),
+                new SqlParameter("@ModifyBy",objML_Panels.ModifyBy),
+                new SqlParameter("@CreatedBy",objML_Panels.CreatedBy),                                      
+                                      new SqlParameter("@ImageID",objML_Panels.ImageID),
+                                      new SqlParameter("@State",objML_Panels.StateID),
+                                      new SqlParameter("@DocType",objML_Panels.DocType)
+
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "FBNPC_AchieverImage_Insert", par);
+        }
+        public DataTable DL_UpdateAchieverInfo(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_Achiever_Select", par).Tables[0];
+        }
+        public int DL_DeleteAchieverInfo(ML_Panels objML_Panels)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_Panels.ID),
+
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_Achiever_Delete", par);
+        }
     }
 }

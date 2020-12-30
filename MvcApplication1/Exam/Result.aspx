@@ -48,16 +48,22 @@
  
 					<div class="profile-content">
                         <div class="row">
+                            <div class="col-sm-4">
+                                <asp:RadioButton ID="rbtnMultiple" runat="server" CssClass="form-control" Checked="true" Text="Multiple" GroupName="Sections" OnCheckedChanged="SelectRbtnMultiple" AutoPostBack="true" />
+                            </div>
+                            <div class="col-sm-4">
+                                <asp:RadioButton ID="rbtnIndividual" runat="server" CssClass="form-control" Text="Individual" GroupName="Sections" OnCheckedChanged="SelectRbtnMultiple" AutoPostBack="true" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
                               <div class="col-sm-3">
                                 <asp:DropDownList ID="ddlExamName" runat="server" CssClass="form-control"></asp:DropDownList>
                             </div>
                             <div class="col-sm-3">
                                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Searching...."></asp:TextBox>
-                            </div>                          
-                            <div class="col-sm-2">
-                                <asp:RadioButton ID="rbtnMultiple" runat="server" CssClass="checkbox" Checked="true" Text="Multiple" GroupName="Sections" />
-                                <asp:RadioButton ID="rbtnIndividual" runat="server" CssClass="checkbox" Text="Individual" GroupName="Sections" />
-                                </div>
+                            </div>                         
+                           
                             <div class="col-sm-4">
                                 <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-circle" Text=">>>>>" OnClick="Search" style="background: #4ca5e8;color: white;" />
                                 <asp:Button ID="btnReset" runat="server" CssClass="btn btn-arrow-link" Text="Reset" OnClick="Reset" style="background: #4ca5e8;color: white;" />

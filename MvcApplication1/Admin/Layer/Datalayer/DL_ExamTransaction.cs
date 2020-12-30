@@ -108,6 +108,22 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                };
             return SqlHelper.ExecuteNonQuery(con, "FBNPC_Submit_Exam_Insert", par);
         }
+        public int DL_InsTempSaveExam(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={new SqlParameter("@OptionA",objML_ExamTransaction.OptionA),
+                                    new SqlParameter("@OptionB",objML_ExamTransaction.OptionB),
+                                    new SqlParameter("@OptionC",objML_ExamTransaction.OptionC),
+                                    new SqlParameter("@OptionD",objML_ExamTransaction.OptionD),
+                                    new SqlParameter("@Question",objML_ExamTransaction.Question),
+                                    new SqlParameter("@ExamName",objML_ExamTransaction.ExamName),
+                                    new SqlParameter("@StudentName",objML_ExamTransaction.StudentName),
+                                    new SqlParameter("@PaperID",objML_ExamTransaction.PaperID),
+                                    new SqlParameter("@DocType",objML_ExamTransaction.DocType),
+                                    new SqlParameter("@QusNo",objML_ExamTransaction.QusNo)
+
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_Temp_Exam_Insert", par);
+        }
         public int DL_InsValidateQuestion(ML_ExamTransaction objML_ExamTransaction)
         {
             SqlParameter[] par ={ new SqlParameter("@ExamName",objML_ExamTransaction.ExamName),
@@ -151,6 +167,38 @@ namespace MvcApplication1.Admin.Layer.Datalayer
             SqlParameter[] par ={new SqlParameter("@ID",objML_ExamTransaction.ID)
             };
             return SqlHelper.ExecuteDataset(con, "CurrentDateTime", par).Tables[0];
+        }
+        public DataTable DL_TempIndividualPrevious(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_ExamTransaction.ID),
+                                 new SqlParameter("@StudentName",objML_ExamTransaction.StudentName),
+                                 new SqlParameter("@QusNo",objML_ExamTransaction.QusNo)
+                               };
+            return SqlHelper.ExecuteDataset(con, "FBNPC_Show_Individual_Sheet_Question_Previous", par).Tables[0];
+        }
+        public DataTable DL_TempIndividualNext(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_ExamTransaction.ID),
+                                 new SqlParameter("@StudentName",objML_ExamTransaction.StudentName),
+                                 new SqlParameter("@QusNo",objML_ExamTransaction.QusNo)
+                               };
+            return SqlHelper.ExecuteDataset(con, "FBNPC_Show_Individual_Sheet_Question_Next", par).Tables[0];
+        }
+        public DataTable DL_ShowTempQuestionList(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={new SqlParameter("@ExamID",objML_ExamTransaction.ExamName),
+                                    new SqlParameter("@StudentID",objML_ExamTransaction.StudentName)
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_Temp_To_Orignal_Show", par).Tables[0];
+        }
+        public int DL_DelTempExamStudent(ML_ExamTransaction objML_ExamTransaction)
+        {
+            SqlParameter[] par ={ new SqlParameter("@ExamID",objML_ExamTransaction.ExamName),
+                                    new SqlParameter("@StudentID",objML_ExamTransaction.StudentName),
+                                    new SqlParameter("@PaperID",objML_ExamTransaction.PaperID)
+                               };
+            return SqlHelper.ExecuteNonQuery(con, "KSCN_Temp_Delete", par);
         }
     }
 

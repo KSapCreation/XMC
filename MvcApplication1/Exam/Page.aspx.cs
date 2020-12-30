@@ -98,6 +98,7 @@ namespace MvcApplication1.Exam
           //  lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
+        #region BindAllData
         private void BindIndividualQuestionCollection()
         {
             DataTable dt = new DataTable();
@@ -223,6 +224,8 @@ namespace MvcApplication1.Exam
                 StartPageDiv.Visible = false;
             }
         }
+
+        #endregion
         protected void LogOff(object sender, EventArgs e)
         {
             Session.Abandon();
@@ -233,6 +236,7 @@ namespace MvcApplication1.Exam
             Response.Cache.SetNoStore();
         }
 
+        #region ShowData
         protected void ShowListening(object sender, EventArgs e)
         {
             ddlExamQuestion.DataSource = "";
@@ -339,6 +343,7 @@ namespace MvcApplication1.Exam
             DataListItem gvr = (DataListItem)(((Control)sender).NamingContainer);
             {
                 Label lblID = (Label)gvr.FindControl("lblID");
+                Label lblQuesNo = (Label)gvr.FindControl("Label1");
                 LinkButton lnkCounted = (LinkButton)gvr.FindControl("LinkButton3");
                 DataTable dt = new DataTable();
                 objML_ExamTransaction.ID = lblID.Text != "" ? lblID.Text : null;
@@ -360,19 +365,19 @@ namespace MvcApplication1.Exam
                     ddlExamQuestion.Visible = true;
                     ThankuSubmit.Visible = false;
                     StartPageDiv.Visible = false;
-
+                    lblQusNo.Text = lblQuesNo.Text;
                 }
             }
         }
+        #endregion
 
-        #region  Save Function
-
-        protected void SubmitExam(object sender, EventArgs e)
+        #region Next Previous
+        protected void TempSaveExam(object sender, EventArgs e)
         {
             try
             {
                 int i = 0;
-                //QuestionValidation();
+
                 foreach (DataListItem dlist in ddlExamQuestion.Items)
                 {
                     Label QuestionID = ((Label)dlist.FindControl("lblQuestionID"));
@@ -421,15 +426,241 @@ namespace MvcApplication1.Exam
                     objML_ExamTransaction.StudentName = Session["UserName"].ToString();
                     objML_ExamTransaction.PaperID = lblPaperID.Text != "" ? lblPaperID.Text : null;
                     objML_ExamTransaction.DocType = Session["ExamDocType"].ToString();
-                    int x = objBL_ExamTransaction.BL_InsSubmitExam(objML_ExamTransaction);
+                    objML_ExamTransaction.QusNo = lblQusNo.Text;
+                    int x = objBL_ExamTransaction.BL_InsTempSaveExam(objML_ExamTransaction);
                     if (x == 1)
                     { }
-                    
+
                     i = i + 1;
                 }
-               
-                ExamQuestionValidate(objML_ExamTransaction.ExamName, objML_ExamTransaction.StudentName, objML_ExamTransaction.PaperID);
-                VisiblitySections();
+
+
+                // Next Question Appear
+                DataTable dt = new DataTable();
+                objML_ExamTransaction.ID = Session["ExamName"].ToString();
+                objML_ExamTransaction.StudentName = Session["UserName"].ToString();
+                objML_ExamTransaction.QusNo = lblQusNo.Text;
+                dt = objBL_ExamTransaction.BL_TempIndividualNext(objML_ExamTransaction);
+                if (dt.Rows.Count > 0)
+                {
+                    ddlExamQuestion.DataSource = dt;
+                    ddlExamQuestion.DataBind();
+                    SaveDiv.Visible = true;
+                    multiplediv.Visible = false;
+                    DivQuestion_DocType.Attributes.Add("Class", "col-sm-12");
+                    ddlExamQuestion.Height = 200;
+                    lblAllID.Text = dt.Rows[0]["QuestionID"].ToString();
+                    lblPaperID.Text = dt.Rows[0]["PaperID"].ToString();
+                                        
+                    pnQuestion.Height = 300;
+                    ddlExamQuestion.Visible = true;
+                    ThankuSubmit.Visible = false;
+                    StartPageDiv.Visible = false;
+                    lblQusNo.Text = dt.Rows[0]["num"].ToString();
+
+                   
+                    // Temp Answear By user if submit for Temp
+                    foreach (DataListItem dlist in ddlExamQuestion.Items)
+                    {
+                        RadioButton OPtionA = ((RadioButton)dlist.FindControl("RadioButton4"));
+                        RadioButton OptionB = ((RadioButton)dlist.FindControl("RadioButton1"));
+                        RadioButton OptionC = ((RadioButton)dlist.FindControl("RadioButton2"));
+                        RadioButton OptionD = ((RadioButton)dlist.FindControl("RadioButton3"));
+                        int UserAns= Convert.ToInt32(dt.Rows[0]["UserAns"].ToString());
+                        if (UserAns==1)
+                        {
+                            OPtionA.Checked = true;
+                        }
+                        else if(UserAns == 2)
+                        {
+                            OptionB.Checked = true;
+                        }
+                        else if (UserAns == 3)
+                        {
+                            OptionC.Checked = true;
+                        }
+                        else if (UserAns == 4)
+                        {
+                            OptionD.Checked = true;
+                        }
+
+                    }
+                    // End
+                    btnNext.Enabled = true;
+                }
+                else
+                {
+                    btnNext.Enabled = false;
+                }
+                // End
+                
+
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + ex.Message.ToString() + "');", true);
+            }
+        }
+
+        protected void TempPrevious(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+
+                foreach (DataListItem dlist in ddlExamQuestion.Items)
+                {
+                    Label QuestionID = ((Label)dlist.FindControl("lblQuestionID"));
+                    RadioButton OPtionA = ((RadioButton)dlist.FindControl("RadioButton4"));
+                    RadioButton OptionB = ((RadioButton)dlist.FindControl("RadioButton1"));
+                    RadioButton OptionC = ((RadioButton)dlist.FindControl("RadioButton2"));
+                    RadioButton OptionD = ((RadioButton)dlist.FindControl("RadioButton3"));
+
+                    if (OPtionA.Checked == true)
+                    {
+                        objML_ExamTransaction.OptionA = "1";
+                    }
+                    else
+                    {
+                        objML_ExamTransaction.OptionA = "0";
+                    }
+                    // Option B Selection
+                    if (OptionB.Checked == true)
+                    {
+                        objML_ExamTransaction.OptionB = "1";
+                    }
+                    else
+                    {
+                        objML_ExamTransaction.OptionB = "0";
+                    }
+                    // Option C Selection
+                    if (OptionC.Checked == true)
+                    {
+                        objML_ExamTransaction.OptionC = "1";
+                    }
+                    else
+                    {
+                        objML_ExamTransaction.OptionC = "0";
+                    }
+                    // Option D Selection
+                    if (OptionD.Checked == true)
+                    {
+                        objML_ExamTransaction.OptionD = "1";
+                    }
+                    else
+                    {
+                        objML_ExamTransaction.OptionD = "0";
+                    }
+                    objML_ExamTransaction.Question = QuestionID.Text != "" ? QuestionID.Text : null;
+                    objML_ExamTransaction.ExamName = Session["ExamName"].ToString();
+                    objML_ExamTransaction.StudentName = Session["UserName"].ToString();
+                    objML_ExamTransaction.PaperID = lblPaperID.Text != "" ? lblPaperID.Text : null;
+                    objML_ExamTransaction.DocType = Session["ExamDocType"].ToString();
+                    objML_ExamTransaction.QusNo = lblQusNo.Text;
+                    int x = objBL_ExamTransaction.BL_InsTempSaveExam(objML_ExamTransaction);
+                    if (x == 1)
+                    { }
+
+                    i = i + 1;
+                }
+
+
+                DataTable dt = new DataTable();
+                objML_ExamTransaction.ID = Session["ExamName"].ToString();
+                objML_ExamTransaction.StudentName = Session["UserName"].ToString();
+                objML_ExamTransaction.QusNo = lblQusNo.Text;
+                dt = objBL_ExamTransaction.BL_TempIndividualPrevious(objML_ExamTransaction);
+                if (dt.Rows.Count>0)
+                {
+                    ddlExamQuestion.DataSource = dt;
+                    ddlExamQuestion.DataBind();
+                    SaveDiv.Visible = true;
+                    multiplediv.Visible = false;
+                    DivQuestion_DocType.Attributes.Add("Class", "col-sm-12");
+                    ddlExamQuestion.Height = 200;
+                    lblAllID.Text = dt.Rows[0]["QuestionID"].ToString();
+                    lblPaperID.Text = dt.Rows[0]["PaperID"].ToString();
+                    //lnkCounted.BackColor = System.Drawing.Color.Gray;
+                    //lnkCounted.ForeColor = System.Drawing.Color.Black;
+                    pnQuestion.Height = 300;
+                    ddlExamQuestion.Visible = true;
+                    ThankuSubmit.Visible = false;
+                    StartPageDiv.Visible = false;
+                    lblQusNo.Text = dt.Rows[0]["num"].ToString();
+                    btnNext.Enabled = true;
+                    // Temp Answear By user if submit for Temp
+                    foreach (DataListItem dlist in ddlExamQuestion.Items)
+                    {
+                        RadioButton OPtionA = ((RadioButton)dlist.FindControl("RadioButton4"));
+                        RadioButton OptionB = ((RadioButton)dlist.FindControl("RadioButton1"));
+                        RadioButton OptionC = ((RadioButton)dlist.FindControl("RadioButton2"));
+                        RadioButton OptionD = ((RadioButton)dlist.FindControl("RadioButton3"));
+                        int UserAns = Convert.ToInt32(dt.Rows[0]["UserAns"].ToString());
+                        if (UserAns == 1)
+                        {
+                            OPtionA.Checked = true;
+                        }
+                        else if (UserAns == 2)
+                        {
+                            OptionB.Checked = true;
+                        }
+                        else if (UserAns == 3)
+                        {
+                            OptionC.Checked = true;
+                        }
+                        else if (UserAns == 4)
+                        {
+                            OptionD.Checked = true;
+                        }
+
+                    }
+                    // End
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + ex.Message.ToString() + "');", true);
+            }
+        }
+        #endregion
+
+        #region  Save Function
+
+        protected void SubmitExam(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                DataTable dt = new DataTable();
+                objML_ExamTransaction.ExamName = Session["ExamName"].ToString();
+                objML_ExamTransaction.StudentName = Session["UserName"].ToString();
+                dt = objBL_ExamTransaction.BL_ShowTempQuestionList(objML_ExamTransaction);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        objML_ExamTransaction.Question = dr["QuestionID"].ToString();
+                        objML_ExamTransaction.OptionA = dr["OptionA"].ToString();
+                        objML_ExamTransaction.OptionB = dr["OptionB"].ToString();
+                        objML_ExamTransaction.OptionC = dr["OptionC"].ToString();
+                        objML_ExamTransaction.OptionD = dr["OptionD"].ToString();
+                        objML_ExamTransaction.ExamName = Session["ExamName"].ToString();
+                        objML_ExamTransaction.StudentName = Session["UserName"].ToString();
+                        objML_ExamTransaction.PaperID = lblPaperID.Text != "" ? lblPaperID.Text : null;
+                        objML_ExamTransaction.DocType = Session["ExamDocType"].ToString();
+                        int x = objBL_ExamTransaction.BL_InsSubmitExam(objML_ExamTransaction);
+                        if (x == 1)
+                        { }
+
+                        i = i + 1;
+                    }
+
+                    ExamQuestionValidate(objML_ExamTransaction.ExamName, objML_ExamTransaction.StudentName, objML_ExamTransaction.PaperID);
+                    ExamTempDelete(objML_ExamTransaction.ExamName, objML_ExamTransaction.StudentName, objML_ExamTransaction.PaperID);
+                    VisiblitySections();
+                }
             }
             catch (Exception ex)
             {
@@ -450,6 +681,12 @@ namespace MvcApplication1.Exam
             BindVideoCollection();
             BindCollection();
             BindReadingCollection();
+            string ExamDocType = Session["ExamDocType"].ToString();
+            if (ExamDocType == "Individual")
+            {
+                DlIndividual.Visible = false;
+            }
+            
         }
         private void ExamQuestionValidate(string ExamName, string Student, string PaperID)
         {
@@ -457,6 +694,15 @@ namespace MvcApplication1.Exam
             objML_ExamTransaction.StudentName = Student;
             objML_ExamTransaction.PaperID = PaperID;
             int x = objBL_ExamTransaction.BL_InsValidateQuestion(objML_ExamTransaction);
+            if (x == 1)
+            { }
+        }
+        private void ExamTempDelete(string ExamName, string Student, string PaperID)
+        {
+            objML_ExamTransaction.ExamName = ExamName;
+            objML_ExamTransaction.StudentName = Student;
+            objML_ExamTransaction.PaperID = PaperID;
+            int x = objBL_ExamTransaction.BL_DelTempTableExamStudent(objML_ExamTransaction);
             if (x == 1)
             { }
         }

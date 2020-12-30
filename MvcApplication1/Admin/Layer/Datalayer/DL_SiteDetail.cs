@@ -90,6 +90,13 @@ namespace MvcApplication1.Admin.Layer.Datalayer
                                };
             return SqlHelper.ExecuteDataset(con, "FBNPC_OurPrograms_Bind", par).Tables[0];
         }
-       
+        public DataTable DL_BindAchieverList(ML_SiteDetail objML_SiteDetail)
+        {
+            SqlParameter[] par ={new SqlParameter("@ID",objML_SiteDetail.ID)
+
+                               };
+            return SqlHelper.ExecuteDataset(con, "KSCN_Achiever_DocType", par).Tables[0];
+        }
+
     }
 }

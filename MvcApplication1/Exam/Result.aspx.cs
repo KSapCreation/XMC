@@ -26,14 +26,26 @@ namespace MvcApplication1.Exam
             }
             if (!IsPostBack)
             {
-                BindProgramsInfo();
-                BindExamList();
+                BindProgramsInfo();                
             }
+        }
+        protected void SelectRbtnMultiple(object sender, EventArgs e)
+        {
+            BindExamList();   
         }
         private void BindExamList()
         {
             DataTable dt = new DataTable();
             objML_StudentProfile.ID = Session["UserName"].ToString();
+            if (rbtnIndividual.Checked == true)
+            {
+                objML_StudentProfile.doctype = rbtnIndividual.Text;
+            }
+            else
+            {
+                objML_StudentProfile.doctype = rbtnMultiple.Text;
+            }
+
             dt = objBL_StudentProfile.BL_BindExamList(objML_StudentProfile);
             if (dt.Rows.Count > 0)
             {
@@ -42,6 +54,14 @@ namespace MvcApplication1.Exam
                 ddlExamName.DataValueField = "ExamCode";
                 ddlExamName.DataBind();
                 ddlExamName.Items.Insert(0, "Select Exam");
+            }
+            else
+            {
+                ddlExamName.DataSource = dt;
+                ddlExamName.DataTextField = "";
+                ddlExamName.DataValueField = "";
+                ddlExamName.DataBind();
+                ddlExamName.Items.Insert(0, "No Exam");
             }
 
         }

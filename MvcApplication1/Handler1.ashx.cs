@@ -19,6 +19,7 @@ namespace MvcApplication1
         {
             string id = context.Request.QueryString["ImgID"];
             string TestimonialID = context.Request.QueryString["TestimonialID"];
+            string AchieverID = context.Request.QueryString["AchieverID"]; 
             SqlConnection connection = new SqlConnection(strcon);
             if (id != null)
             {
@@ -47,7 +48,23 @@ namespace MvcApplication1
                 connection.Close();
                 context.Response.End();
             }
-            
+            else if (AchieverID != null)
+            {
+                connection.Open();
+                SqlCommand command1 = new SqlCommand("select Filedata from KSCN_Achiever_Master where AchieverID='" + AchieverID + "'", connection);
+                SqlDataReader dr1 = command1.ExecuteReader();
+                dr1.Read();
+                if (dr1.HasRows)
+                {
+                    context.Response.BinaryWrite((Byte[])dr1[0]);
+                }
+                else
+                {
+                }
+                connection.Close();
+                context.Response.End();
+            }
+
         }
 
         public bool IsReusable
