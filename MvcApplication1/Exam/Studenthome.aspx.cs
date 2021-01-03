@@ -30,7 +30,7 @@ namespace MvcApplication1.Exam
             if (!IsPostBack)
             {         
                 BindStudentInfo();
-                BIndExamList();
+                //BIndExamList();
                 StudentName = Session["username"].ToString();
                 txtStudentName.Text = Session["Name"].ToString();
                 lblStudentID.Text = Session["UserName"].ToString();
@@ -151,14 +151,26 @@ namespace MvcApplication1.Exam
         }
 
         #endregion
-        
+        protected void SelectRbtnMultiple(object sender, EventArgs e)
+        {
+            BIndExamList();
+        }
         public void BIndExamList()
         {
             try
             {
                 DataTable dt = new DataTable();
                 objML_StudentProfile.ID = Session["UserName"].ToString();
-                dt = objBL_StudentProfile.BL_BindStudentExamList(objML_StudentProfile);
+                if (rbtnInd.Checked == true)
+                {
+                    objML_StudentProfile.doctype = "Individual";
+                }
+                else
+                {
+                    objML_StudentProfile.doctype = "Multiple";
+                }
+
+                dt = objBL_StudentProfile.BL_BindExamList(objML_StudentProfile);
                 if (dt.Rows.Count > 0)
                 {
                     ddlExamlist.DataSource = dt;
@@ -166,6 +178,14 @@ namespace MvcApplication1.Exam
                     ddlExamlist.DataTextField = "ExamName";
                     ddlExamlist.DataBind();
                     ddlExamlist.Items.Insert(0, "Select");
+                }
+                else
+                {
+                    ddlExamlist.DataSource = dt;
+                    ddlExamlist.DataTextField = "";
+                    ddlExamlist.DataValueField = "";
+                    ddlExamlist.DataBind();
+                    ddlExamlist.Items.Insert(0, "No Exam");
                 }
             }
             catch

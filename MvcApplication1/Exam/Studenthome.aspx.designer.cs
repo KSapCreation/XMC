@@ -123,6 +123,24 @@ namespace MvcApplication1.Exam
         protected global::System.Web.UI.WebControls.TextBox txtStudentName;
 
         /// <summary>
+        /// rbtnInd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnInd;
+
+        /// <summary>
+        /// rbtnMult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnMult;
+
+        /// <summary>
         /// ddlExamlist control.
         /// </summary>
         /// <remarks>

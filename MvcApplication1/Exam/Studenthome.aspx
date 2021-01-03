@@ -221,22 +221,36 @@
                                        
                                         <div class="form-body">
                                             <div class="row">
-                                            
-                                            <div class="col-md-6">
-                                                <div class="form-group has-error">
-                                                    <label class="control-label">Student Name</label>
-                                                    <asp:label ID="lblStudentID" runat="server" CssClass="form-control" Visible="false"></asp:label>
-                                                     <asp:TextBox ID="txtStudentName" runat="server" CssClass="form-control" placeholder="Student Name" ReadOnly="true"></asp:TextBox>
+                                                <div class="col-md-6">
+                                                    <div class="form-group has-error">
+                                                        <label class="control-label">Student Name</label>
+                                                        <asp:Label ID="lblStudentID" runat="server" CssClass="form-control" Visible="false"></asp:Label>
+                                                        <asp:TextBox ID="txtStudentName" runat="server" CssClass="form-control" placeholder="Student Name" ReadOnly="true"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Individual</label>
+                                                        <asp:RadioButton ID="rbtnInd" runat="server" CssClass="form-control" GroupName="section" OnCheckedChanged="SelectRbtnMultiple" AutoPostBack="true"></asp:RadioButton>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Multiple</label>
+                                                        <asp:RadioButton ID="rbtnMult" runat="server" CssClass="form-control" Checked="true" GroupName="section" OnCheckedChanged="SelectRbtnMultiple" AutoPostBack="true"></asp:RadioButton>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                 
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Exam Name</label>
+                                                        <asp:DropDownList ID="ddlExamlist" runat="server" CssClass="form-control" OnSelectedIndexChanged="CheckAvailability" AutoPostBack="true"></asp:DropDownList>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Exam Name</label>
-                                                  <asp:DropDownList ID="ddlExamlist" runat="server" CssClass="form-control" OnSelectedIndexChanged="CheckAvailability" AutoPostBack="true"></asp:DropDownList>
-                                                </div>
-                                            </div>
-                                        </div>                                            
                                             <div class="form-actions right">
                                                 <asp:Button ID="btnSubmit" runat="server" Text="Availability" CssClass="btn blue" OnClick="AvailabilityReloader" />
                                             </div>

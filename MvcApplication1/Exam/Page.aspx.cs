@@ -366,6 +366,34 @@ namespace MvcApplication1.Exam
                     ThankuSubmit.Visible = false;
                     StartPageDiv.Visible = false;
                     lblQusNo.Text = lblQuesNo.Text;
+
+                    // Temp Answear By user if submit for Temp
+                    foreach (DataListItem dlist in ddlExamQuestion.Items)
+                    {
+                        RadioButton OPtionA = ((RadioButton)dlist.FindControl("RadioButton4"));
+                        RadioButton OptionB = ((RadioButton)dlist.FindControl("RadioButton1"));
+                        RadioButton OptionC = ((RadioButton)dlist.FindControl("RadioButton2"));
+                        RadioButton OptionD = ((RadioButton)dlist.FindControl("RadioButton3"));
+                        int UserAns = Convert.ToInt32(dt.Rows[0]["UserAns"].ToString());
+                        if (UserAns == 1)
+                        {
+                            OPtionA.Checked = true;
+                        }
+                        else if (UserAns == 2)
+                        {
+                            OptionB.Checked = true;
+                        }
+                        else if (UserAns == 3)
+                        {
+                            OptionC.Checked = true;
+                        }
+                        else if (UserAns == 4)
+                        {
+                            OptionD.Checked = true;
+                        }
+
+                    }
+                    // End
                 }
             }
         }
